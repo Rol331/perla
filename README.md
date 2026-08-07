@@ -73,9 +73,43 @@ datos y lo abre en una pestaña nueva. Si más adelante quiere recibirlos por
 correo, reemplace el bloque final de `assets/js/main.js` por un `fetch()` a su
 endpoint (Formspree, Vercel Functions, etc.).
 
-## Publicación
+## Publicación en GitHub Pages
 
-Al ser estático, sirve cualquier hosting. Con Vercel:
+El repositorio ya está inicializado y con el primer commit hecho. Faltan dos
+pasos:
+
+**1. Cree el repositorio en GitHub** (vacío, sin README ni .gitignore) y suba
+el código:
+
+```bash
+git remote add origin https://github.com/USUARIO/REPO.git
+git push -u origin main
+```
+
+**2. Active Pages** en el repositorio: *Settings → Pages → Source: Deploy from
+a branch → Branch: `main` / carpeta `/ (root)` → Save*.
+
+En un par de minutos queda publicado en `https://USUARIO.github.io/REPO/`.
+
+Para actualizarlo después, basta con:
+
+```bash
+git add -A && git commit -m "descripción del cambio" && git push
+```
+
+### Notas sobre Pages
+
+- El archivo `.nojekyll` está incluido para que GitHub publique la carpeta tal
+  cual, sin procesarla con Jekyll.
+- Todas las rutas son relativas, así que el sitio funciona igual en la raíz de
+  un dominio que en un subdirectorio (`usuario.github.io/repo/`).
+- Si más adelante usa un dominio propio, actualice las etiquetas
+  `<link rel="canonical">` de cada página, que hoy apuntan a
+  `campamentolaperla.com.pe`.
+
+### Otras opciones
+
+Al ser estático sirve cualquier hosting. Con Vercel:
 
 ```bash
 npx vercel deploy --prod
