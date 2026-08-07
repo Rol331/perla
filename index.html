@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hospedaje, restaurante y eventos en Chupaca · Campamento La Perla</title>
+    <meta name="description" content="Campamento La Perla: hospedaje con 80 habitaciones, restaurante, salones para eventos y amplias áreas verdes en Chupaca, Junín. A minutos de Huancayo.">
+    <meta name="author" content="Campamento La Perla">
+    <link rel="canonical" href="https://www.campamentolaperla.com.pe/index.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Campamento La Perla">
+    <meta property="og:title" content="Hospedaje, restaurante y eventos en Chupaca · Campamento La Perla">
+    <meta property="og:description" content="Campamento La Perla: hospedaje con 80 habitaciones, restaurante, salones para eventos y amplias áreas verdes en Chupaca, Junín. A minutos de Huancayo.">
+    <meta property="og:locale" content="es_PE">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Oswald:wght@200;300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/fallback.js"></script>
+  </head>
+  <body>
+    <header class="site-header site-header--over" id="siteHeader">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+          <span class="brand__mark">LP</span>
+          <span class="brand__text">
+            <span class="brand__name">La Perla</span>
+            <span class="brand__tag">Chupaca · Junín</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+            <a class="nav__link is-active" href="index.html">Inicio</a>
+            <a class="nav__link" href="nosotros.html">Nosotros</a>
+            <a class="nav__link" href="habitaciones.html">Habitaciones</a>
+            <a class="nav__link" href="restaurante.html">Restaurante</a>
+            <a class="nav__link" href="eventos.html">Eventos</a>
+            <a class="nav__link" href="recreacion.html">Recreación</a>
+            <a class="nav__link" href="galeria.html">Galería</a>
+            <a class="nav__link" href="contacto.html">Contacto</a>
+        </nav>
+
+        <div class="site-header__actions">
+          <a class="btn btn--ghost" href="contacto.html">Reservar</a>
+          <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <nav aria-label="Navegación móvil">
+          <a href="index.html">Inicio</a>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="habitaciones.html">Habitaciones</a>
+          <a href="restaurante.html">Restaurante</a>
+          <a href="eventos.html">Eventos</a>
+          <a href="recreacion.html">Recreación</a>
+          <a href="galeria.html">Galería</a>
+          <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="mobile-menu__foot">
+        Av. La Eternidad 1085, Chupaca 12455<br>
+        <a href="tel:+5199274692">992 74692</a>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero">
+        <div class="hero__media"><img src="assets/img/hero-inicio.jpg" data-fallback="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=2000&q=80" alt="Campamento La Perla en el valle del Mantaro"></div>
+        <div class="container hero__inner">
+          <span class="eyebrow" style="color:rgba(255,255,255,.85)" data-reveal>Chupaca · Junín · Perú</span>
+          <h1 class="hero__title" data-reveal>Un refugio en el <em>valle andino</em></h1>
+          <p class="hero__sub" data-reveal>Hospedaje, restaurante y centro de eventos rodeado de jardines, a pocos minutos de Huancayo. Atención personalizada desde hace más de tres décadas.</p>
+          <div class="hero__actions" data-reveal>
+            <a class="btn btn--light" href="habitaciones.html">Ver habitaciones</a>
+            <a class="btn btn--outline-light" href="eventos.html">Organizar un evento</a>
+          </div>
+          <div class="hero__meta" data-reveal>
+            <div><strong>80</strong>Habitaciones</div>
+            <div><strong>4.6</strong>TripAdvisor</div>
+            <div><strong>4</strong>Idiomas</div>
+            <div><strong>30+</strong>Años de trayectoria</div>
+          </div>
+        </div>
+        <span class="scroll-cue" aria-hidden="true"></span>
+      </section>
+
+      <section class="section--tight" style="padding-top:0">
+        <div class="container">
+          <div class="booking-bar" data-reveal>
+            <form data-form="reserva">
+              <div class="field">
+                <label for="h-in">Llegada</label>
+                <input type="date" id="h-in" name="checkin" required>
+              </div>
+              <div class="field">
+                <label for="h-out">Salida</label>
+                <input type="date" id="h-out" name="checkout" required>
+              </div>
+              <div class="field">
+                <label for="h-guests">Huéspedes</label>
+                <select id="h-guests" name="huespedes">
+                  <option>1 persona</option>
+                  <option selected>2 personas</option>
+                  <option>3 personas</option>
+                  <option>4 personas</option>
+                  <option>Grupo (5+)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="h-type">Habitación</label>
+                <select id="h-type" name="tipo">
+                  <option>Simple</option>
+                  <option selected>Doble</option>
+                  <option>Triple</option>
+                  <option>Cuádruple / Familiar</option>
+                </select>
+              </div>
+              <button class="btn" type="submit">Consultar</button>
+            </form>
+            <p class="form__status" id="reservaStatus" hidden></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid grid--split">
+          <div class="media-stack" data-reveal>
+            <div class="media media--wide media-stack__back"><img src="assets/img/nosotros-1.jpg" data-fallback="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80" alt="Jardines del campamento" loading="lazy" decoding="async"></div>
+            <div class="media media--square media-stack__front"><img src="assets/img/nosotros-2.jpg" data-fallback="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=900&q=80" alt="Detalle de las áreas verdes" loading="lazy" decoding="async"></div>
+          </div>
+          <div data-reveal>
+            <span class="eyebrow">Bienvenidos</span>
+            <h2>Su casa lejos de casa, en pleno valle del Mantaro</h2>
+            <p class="lead">Campamento La Perla nació como un espacio de descanso en un valle de los altos Andes donde la naturaleza se mantiene intacta. Aquí se puede relajar, disfrutar y descubrir la cultura inca en familia.</p>
+            <p>Estamos lo suficientemente alejados del bullicio para ofrecer silencio real, pero a minutos del centro de Chupaca y de Huancayo. Atendemos en español, inglés, alemán y portugués.</p>
+            <ul class="check-list" style="margin:26px 0 34px">
+              <li>Wi-Fi gratuito en todo el recinto</li>
+              <li>Estacionamiento sin costo</li>
+              <li>Admitimos mascotas</li>
+              <li>Servicio a la habitación</li>
+              <li>Centro de negocios</li>
+              <li>Amplias áreas verdes</li>
+            </ul>
+            <a class="link-underline" href="nosotros.html">Conocer nuestra historia</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--gray">
+        <div class="container">
+          <div class="stack-center section-head" data-reveal>
+            <span class="eyebrow">Lo que ofrecemos</span>
+            <h2>Todo en un mismo lugar</h2>
+            <p>Alojamiento, gastronomía, deporte y espacios para eventos dentro de un recinto ajardinado.</p>
+          </div>
+          <div class="grid grid--4">
+          <div class="feature" data-reveal>
+            <div class="feature__icon">⌂</div>
+            <h4>80 habitaciones</h4>
+            <p>Simples, dobles, triples y cuádruples con baño privado, agua caliente y TV.</p>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="feature__icon">✦</div>
+            <h4>Restaurante y heladería</h4>
+            <p>Platos a la carta, desayunos y menús para grupos. Heladería propia.</p>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="feature__icon">◈</div>
+            <h4>Salones para eventos</h4>
+            <p>Bodas, banquetes, conferencias y aulas de capacitación.</p>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="feature__icon">❀</div>
+            <h4>Áreas verdes y deporte</h4>
+            <p>Jardines, canchas de fútbol y vóley, gimnasio y zonas de descanso.</p>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Alojamiento</span>
+            <h2>Habitaciones cómodas y silenciosas</h2>
+            <p>Ochenta habitaciones distribuidas en pabellones bajos, todas con acceso directo a los jardines.</p>
+          </div>
+          <div class="grid grid--3">
+          <a class="card" href="habitacion-doble.html" data-reveal>
+            <div class="media media--tall"><img src="assets/img/habitacion-doble.jpg" data-fallback="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80" alt="Habitación Doble" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">2 personas · 1 cama queen</p>
+              <h3 class="card__title">Habitación Doble</h3>
+              <p>La opción preferida por parejas y viajeros de negocios, con vista a los jardines.</p>
+              <p class="card__foot"><span class="link-underline">Ver detalle</span></p>
+            </div>
+          </a>
+          <a class="card" href="habitacion-familiar.html" data-reveal>
+            <div class="media media--tall"><img src="assets/img/habitacion-familiar.jpg" data-fallback="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1000&q=80" alt="Suite Familiar" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">4 personas · 2 ambientes</p>
+              <h3 class="card__title">Suite Familiar</h3>
+              <p>Espacio amplio para toda la familia, con zona de estar y baño completo.</p>
+              <p class="card__foot"><span class="link-underline">Ver detalle</span></p>
+            </div>
+          </a>
+          <a class="card" href="habitaciones.html" data-reveal>
+            <div class="media media--tall"><img src="assets/img/habitacion-simple.jpg" data-fallback="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1000&q=80" alt="Habitación Simple" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">1 persona · 1 cama</p>
+              <h3 class="card__title">Habitación Simple</h3>
+              <p>Cómoda y silenciosa, ideal para estadías cortas y capacitaciones.</p>
+              <p class="card__foot"><span class="link-underline">Ver detalle</span></p>
+            </div>
+          </a>
+          </div>
+          <p style="margin-top:48px" data-reveal><a class="btn btn--ghost" href="habitaciones.html">Ver todas las habitaciones</a></p>
+        </div>
+      </section>
+
+      <section class="section cta-band">
+        <div class="cta-band__media"><img src="assets/img/cta-eventos.jpg" data-fallback="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1800&q=80" alt="Bodas, banquetes y convenciones" loading="lazy" decoding="async"></div>
+        <div class="container stack-center text-light" data-reveal>
+          <span class="eyebrow">Eventos</span>
+          <h2>Bodas, banquetes y convenciones</h2>
+          <p class="lead">Salones equipados, aulas de capacitación y un amplio jardín para recepciones al aire libre. Coordinamos catering, montaje y hospedaje para sus invitados.</p>
+          <p style="margin-top:34px"><a class="btn btn--light" href="eventos.html">Cotizar un evento</a></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid grid--split">
+          <div data-reveal>
+            <span class="eyebrow">Restaurante</span>
+            <h2>Sabor del valle, servido a la carta</h2>
+            <p class="lead">Nuestro restaurante prepara platos a la carta, desayunos incluidos y menús especiales para grupos y eventos. La heladería propia es una parada obligatoria.</p>
+            <p>Los huéspedes destacan de forma constante la calidad de la comida y la atención del personal. También ofrecemos servicio a la habitación.</p>
+            <p style="margin-top:32px"><a class="btn btn--ghost" href="restaurante.html">Ver el restaurante</a></p>
+          </div>
+          <div class="media media--wide" data-reveal><img src="assets/img/restaurante-1.jpg" data-fallback="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Restaurante de Campamento La Perla" loading="lazy" decoding="async"></div>
+        </div>
+      </section>
+
+      <section class="section section--dark text-light">
+        <div class="container grid grid--4">
+          <div class="stat" data-reveal><p class="stat__num" data-count="80">80</p><p class="stat__label">Habitaciones</p></div>
+          <div class="stat" data-reveal><p class="stat__num" data-count="30" data-suffix="+">30+</p><p class="stat__label">Años de trayectoria</p></div>
+          <div class="stat" data-reveal><p class="stat__num" data-count="4">4</p><p class="stat__label">Idiomas de atención</p></div>
+          <div class="stat" data-reveal><p class="stat__num">4.6</p><p class="stat__label">Puntuación TripAdvisor</p></div>
+        </div>
+      </section>
+
+      <section class="section section--gray">
+        <div class="container" data-reveal>
+          <div class="stack-center section-head">
+            <span class="eyebrow">Opiniones</span>
+            <h2>4.6 sobre 5 en TripAdvisor</h2>
+            <p>Reconocidos con el Travelers' Choice y ubicados como el alojamiento nº1 de Chupaca.</p>
+          </div>
+          <div class="slider" id="testimonials">
+            <div class="slider__track">
+            <div class="slider__slide">
+              <blockquote class="quote">
+                <p class="quote__stars">★★★★★</p>
+                <p class="quote__text">“Un pedazo de cielo, muy bien mantenido, con flores, árboles y áreas de recreación.”</p>
+                <p class="quote__author">Huésped verificado</p>
+                <p class="quote__source">TripAdvisor</p>
+              </blockquote>
+            </div>
+            <div class="slider__slide">
+              <blockquote class="quote">
+                <p class="quote__stars">★★★★★</p>
+                <p class="quote__text">“Lo suficientemente alejado del pueblo para estar tranquilo, pero cerca de todo. Excelente personal.”</p>
+                <p class="quote__author">Huésped verificado</p>
+                <p class="quote__source">TripAdvisor</p>
+              </blockquote>
+            </div>
+            <div class="slider__slide">
+              <blockquote class="quote">
+                <p class="quote__stars">★★★★★</p>
+                <p class="quote__text">“La comida es excelente y la atención muy personalizada. Volveremos con la familia.”</p>
+                <p class="quote__author">Huésped verificado</p>
+                <p class="quote__source">TripAdvisor</p>
+              </blockquote>
+            </div>
+            </div>
+          </div>
+          <div class="slider__dots" data-for="testimonials">
+            <button type="button" data-slide="0" class="is-active" aria-label="Ver opinión 1"></button>
+            <button type="button" data-slide="1" aria-label="Ver opinión 2"></button>
+            <button type="button" data-slide="2" aria-label="Ver opinión 3"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="stack-center section-head" data-reveal>
+            <span class="eyebrow">Galería</span>
+            <h2>Un recorrido por La Perla</h2>
+          </div>
+          <div class="gallery" data-gallery>
+            <figure class="gallery__item g-6" data-caption="Jardines y áreas verdes"><img src="assets/img/galeria-05.jpg" data-fallback="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80" alt="Jardines y áreas verdes" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-6" data-caption="Habitación doble"><img src="assets/img/galeria-03.jpg" data-fallback="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Habitación doble" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-4" data-caption="Restaurante"><img src="assets/img/galeria-04.jpg" data-fallback="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&w=1200&q=80" alt="Restaurante" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-4" data-caption="Salón de eventos"><img src="assets/img/galeria-06.jpg" data-fallback="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Salón de eventos" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-4" data-caption="Áreas deportivas"><img src="assets/img/galeria-07.jpg" data-fallback="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80" alt="Áreas deportivas" loading="lazy" decoding="async"></figure>
+          </div>
+          <p style="margin-top:48px" data-reveal><a class="btn btn--ghost" href="galeria.html">Ver la galería completa</a></p>
+        </div>
+      </section>
+
+      <section class="section cta-band">
+        <div class="cta-band__media"><img src="assets/img/cta-final.jpg" data-fallback="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1800&q=80" alt="¿Listo para visitarnos?" loading="lazy" decoding="async"></div>
+        <div class="container stack-center text-light" data-reveal>
+          <span class="eyebrow">Reservas</span>
+          <h2>¿Listo para visitarnos?</h2>
+          <p class="lead">Escríbanos por WhatsApp o complete el formulario y le confirmamos disponibilidad y tarifas el mismo día.</p>
+          <p style="margin-top:34px"><a class="btn btn--light" href="contacto.html">Consultar disponibilidad</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+          <span class="brand__mark">LP</span>
+          <span class="brand__text">
+            <span class="brand__name">La Perla</span>
+            <span class="brand__tag">Chupaca · Junín</span>
+          </span>
+        </a>
+          <p style="font-size:14px;max-width:34ch">Hospedaje, restaurante y centro de eventos en el valle del Mantaro. Un pedazo de tranquilidad a pocos minutos de Huancayo.</p>
+        </div>
+        <div>
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="nosotros.html">Nosotros</a></li><li><a href="habitaciones.html">Habitaciones</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="eventos.html">Eventos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="recreacion.html">Áreas verdes y canchas</a></li>
+            <li><a href="eventos.html">Salones y banquetes</a></li>
+            <li><a href="restaurante.html">Restaurante y heladería</a></li>
+            <li><a href="eventos.html">Centro de negocios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
+            <li><a href="tel:+5199274692">992 74692</a></li>
+            <li><a href="mailto:reservas@campamentolaperla.com.pe">reservas@campamentolaperla.com.pe</a></li>
+          </ul>
+          <div class="socials" style="margin-top:18px">
+            <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook">Fb</a>
+            <a href="https://wa.me/5199274692" target="_blank" rel="noopener" aria-label="WhatsApp">Wa</a>
+          </div>
+        </div>
+      </div>
+      <div class="container site-footer__bottom">
+        <span>© <span id="year">2026</span> Campamento La Perla. Todos los derechos reservados.</span>
+        <span>Chupaca · Junín · Perú</span>
+      </div>
+    </footer>
+
+    <a class="wa-float" href="https://wa.me/5199274692?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla"
+       target="_blank" rel="noopener"><strong>✆</strong><span>WhatsApp</span></a>
+
+    <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+      <button class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
+      <button class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
+      <img id="lightboxImg" src="" alt="">
+      <button class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
+      <p class="lightbox__caption" id="lightboxCaption"></p>
+    </div>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Node (por si más adelante se añade alguna herramienta)
+node_modules/
+
+# Claude Code (configuración local)
+.claude/
