@@ -3,22 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Restaurante y heladería · Campamento La Perla</title>
-    <meta name="description" content="Restaurante a la carta y heladería en Campamento La Perla, Chupaca. Menús para grupos, desayunos y servicio a la habitación.">
-    <meta name="author" content="Campamento La Perla">
-    <link rel="canonical" href="https://www.campamentolaperla.com.pe/restaurante.html">
+    <title>Restaurante · Campamento La Perla</title>
+    <meta name="description" content="Cocina tradicional del Valle del Mantaro con insumos de nuestra propia granja. Pachamanca, cuy colorado, trucha y menús para grupos en Chupaca.">
+    <meta name="theme-color" content="#112b14">
+    <link rel="canonical" href="https://campamentolaperla.com.pe/restaurante.html">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Campamento La Perla">
-    <meta property="og:title" content="Restaurante y heladería · Campamento La Perla">
-    <meta property="og:description" content="Restaurante a la carta y heladería en Campamento La Perla, Chupaca. Menús para grupos, desayunos y servicio a la habitación.">
+    <meta property="og:title" content="Restaurante · Campamento La Perla">
+    <meta property="og:description" content="Cocina tradicional del Valle del Mantaro con insumos de nuestra propia granja. Pachamanca, cuy colorado, trucha y menús para grupos en Chupaca.">
     <meta property="og:locale" content="es_PE">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Oswald:wght@200;300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/fallback.js"></script>
   </head>
   <body>
     <header class="site-header site-header--over" id="siteHeader">
@@ -32,18 +31,30 @@
         </a>
 
         <nav class="nav" aria-label="Navegación principal">
-            <a class="nav__link" href="index.html">Inicio</a>
-            <a class="nav__link" href="nosotros.html">Nosotros</a>
-            <a class="nav__link" href="habitaciones.html">Habitaciones</a>
-            <a class="nav__link is-active" href="restaurante.html">Restaurante</a>
-            <a class="nav__link" href="eventos.html">Eventos</a>
-            <a class="nav__link" href="recreacion.html">Recreación</a>
-            <a class="nav__link" href="galeria.html">Galería</a>
-            <a class="nav__link" href="contacto.html">Contacto</a>
+            <div class="nav__item"><a class="nav__link" href="index.html">Inicio</a></div>
+            <div class="nav__item">
+              <a class="nav__link is-active" href="hospedaje.html">Hospedaje <span class="nav__caret">▼</span></a>
+              <div class="nav__sub">
+              <a href="hospedaje.html">Habitaciones</a>
+              <a href="restaurante.html" class="is-active">Restaurante</a>
+              </div>
+            </div>
+            <div class="nav__item"><a class="nav__link" href="retiros.html">Retiros</a></div>
+            <div class="nav__item">
+              <a class="nav__link" href="eventos.html">Eventos <span class="nav__caret">▼</span></a>
+              <div class="nav__sub">
+              <a href="eventos.html">Eventos y fiestas</a>
+              <a href="recreacion.html">Recreación</a>
+              <a href="galeria.html">Galería</a>
+              </div>
+            </div>
+            <div class="nav__item"><a class="nav__link" href="corporativos.html">Corporativos</a></div>
+            <div class="nav__item"><a class="nav__link" href="nosotros.html">Nosotros</a></div>
+            <div class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></div>
         </nav>
 
         <div class="site-header__actions">
-          <a class="btn btn--ghost" href="contacto.html">Reservar</a>
+          <a class="btn btn--ghost" href="contacto.html">¡Reserva aquí!</a>
           <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
             <span></span><span></span><span></span>
           </button>
@@ -54,27 +65,29 @@
     <div class="mobile-menu" id="mobileMenu">
       <nav aria-label="Navegación móvil">
           <a href="index.html">Inicio</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="habitaciones.html">Habitaciones</a>
-          <a href="restaurante.html">Restaurante</a>
+          <a href="hospedaje.html">Hospedaje</a>
+          <a class="is-sub" href="restaurante.html">Restaurante</a>
+          <a href="retiros.html">Retiros</a>
           <a href="eventos.html">Eventos</a>
-          <a href="recreacion.html">Recreación</a>
-          <a href="galeria.html">Galería</a>
+          <a class="is-sub" href="recreacion.html">Recreación</a>
+          <a class="is-sub" href="galeria.html">Galería</a>
+          <a href="corporativos.html">Corporativos</a>
+          <a href="nosotros.html">Nosotros</a>
           <a href="contacto.html">Contacto</a>
       </nav>
       <div class="mobile-menu__foot">
         Av. La Eternidad 1085, Chupaca 12455<br>
-        <a href="tel:+5199274692">992 74692</a>
+        <a href="tel:+51992746927">992 746 927</a> · <a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a>
       </div>
     </div>
 
     <main>
       <section class="hero hero--compact page-head">
-        <div class="hero__media"><img src="assets/img/hero-restaurante.jpg" data-fallback="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80" alt="Restaurante y heladería"></div>
+        <div class="hero__media"><img src="assets/img/hero-restaurante.jpg" alt="Verdadera tradición gastronómica del Valle del Mantaro" fetchpriority="high"></div>
         <div class="container hero__inner text-light" data-reveal>
-          <span class="eyebrow">Gastronomía</span>
-          <h1 class="page-head__title">Restaurante y heladería</h1>
-          <p class="hero__sub">Platos a la carta, desayunos y menús para grupos. La comida es lo que más destacan nuestros huéspedes.</p>
+          <span class="eyebrow">Gastronomía campestre</span>
+          <h1 class="page-head__title">Verdadera tradición gastronómica del Valle del Mantaro</h1>
+          <p class="hero__sub">Platos típicos de la región, cosechas propias e insumos frescos de nuestra granja para deleitar a familias y delegaciones.</p>
           <p class="breadcrumbs"><a href="index.html">Inicio</a> — <span>Restaurante</span></p>
         </div>
       </section>
@@ -83,48 +96,51 @@
         <div class="container grid grid--split">
           <div data-reveal>
             <span class="eyebrow">Nuestra cocina</span>
-            <h2>Producto del valle, cocina de siempre</h2>
-            <p class="lead">Trabajamos con productos del valle del Mantaro y recetas de la zona. El resultado es una carta corta pero honesta, que cambia según lo que da la temporada.</p>
-            <p>Atendemos a huéspedes y también a visitantes externos. Para delegaciones, grupos de capacitación y eventos preparamos menús cerrados y buffet coordinados con anticipación.</p>
-            <p>Y para cerrar: nuestra heladería propia, una parada que casi nadie se salta.</p>
+            <h2>Gastronomía auténtica con insumos de nuestra propia granja</h2>
+            <p class="lead">En Campamento La Perla nos sentimos orgullosos de ofrecer una cocina honesta y con sabor a hogar. Cultivamos nuestros propios vegetales y criamos a nuestros animales (cerdos, ovejas, gallinas y cuyes) asegurando frescura, calidad y el verdadero sazón del Valle del Mantaro.</p>
+            <p>Preparamos platos tradicionales a la carta para visitantes y huéspedes, así como menús especiales, banquetes y pachamancas organizadas para eventos corporativos, retiros e integraciones escolares.</p>
           </div>
-          <div class="media media--tall" data-reveal><img src="assets/img/restaurante-2.jpg" data-fallback="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Ambiente del restaurante" loading="lazy" decoding="async"></div>
+          <div class="media media--wide" data-reveal><img src="assets/img/rest-pachamanca.jpg" alt="Pachamanca tradicional" loading="lazy" decoding="async"></div>
         </div>
       </section>
 
-      <section class="section section--gray">
+      <section class="section section--crema">
         <div class="container">
           <div class="stack-center section-head" data-reveal>
             <span class="eyebrow">La carta</span>
-            <h2>Una muestra de lo que servimos</h2>
-            <p>Carta referencial. Consulte el menú del día y las opciones para grupos.</p>
+            <h2>Platos típicos y sabores del valle</h2>
+            <p>Carta referencial preparada con insumos frescos de nuestra propia crianza y cosecha.</p>
           </div>
           <div class="grid grid--3">
-          <div data-reveal>
-            <h4 style="padding-bottom:14px;border-bottom:1px solid var(--color-accent)">Entradas</h4>
-            <ul>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Sopa de la casa</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Papa a la huancaína</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Causa serrana</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Ensalada del huerto</li>
+          <div class="card--panel" data-reveal>
+            <h4 style="color:var(--naranja);letter-spacing:.16em;font-family:var(--font-body);font-size:11px">Entradas</h4>
+            <ul style="margin-top:6px">
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Papa a la huancaína</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Sopa verde</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Caldo de mondongo</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Tamales y humitas caseras</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Ensalada fresca del huerto</li>
             </ul>
           </div>
-          <div data-reveal>
-            <h4 style="padding-bottom:14px;border-bottom:1px solid var(--color-accent)">Fondos</h4>
-            <ul>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Trucha frita del valle</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Pachamanca (bajo pedido)</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Lomo saltado</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Menú del día</li>
+          <div class="card--panel" data-reveal>
+            <h4 style="color:var(--naranja);letter-spacing:.16em;font-family:var(--font-body);font-size:11px">Fondos</h4>
+            <ul style="margin-top:6px">
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Pachamanca (chancho, carnero o pollo)</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Cuy colorado</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Chicharrón colorado</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Trucha a la parrilla o frita</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Lomo saltado</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Menú del día</li>
             </ul>
           </div>
-          <div data-reveal>
-            <h4 style="padding-bottom:14px;border-bottom:1px solid var(--color-accent)">Para grupos</h4>
-            <ul>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Menús cerrados para delegaciones</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Buffet para eventos</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Desayunos para huéspedes</li>
-              <li style="padding:9px 0;font-family:var(--font-secondary)">Coffee break para capacitaciones</li>
+          <div class="card--panel" data-reveal>
+            <h4 style="color:var(--naranja);letter-spacing:.16em;font-family:var(--font-body);font-size:11px">Para grupos</h4>
+            <ul style="margin-top:6px">
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Menús cerrados para delegaciones</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Buffet para eventos y retiros</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Desayunos campestres para huéspedes</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Pachamanca tradicional a pedido</li>
+              <li style="padding:8px 0;border-bottom:1px solid var(--borde)">Coffee break para capacitaciones</li>
             </ul>
           </div>
           </div>
@@ -134,48 +150,45 @@
       <section class="section">
         <div class="container">
           <div class="grid grid--3">
-            <div class="media media--square" data-reveal><img src="assets/img/plato-1.jpg" data-fallback="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80" alt="Plato de la casa" loading="lazy" decoding="async"></div>
-            <div class="media media--square" data-reveal><img src="assets/img/plato-2.jpg" data-fallback="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80" alt="Especialidad del restaurante" loading="lazy" decoding="async"></div>
-            <div class="media media--square" data-reveal><img src="assets/img/plato-3.jpg" data-fallback="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Postre" loading="lazy" decoding="async"></div>
+          <div class="feature" data-reveal>
+            <span class="feature__num">01</span>
+            <h4>Desayuno campestre</h4>
+            <p>Preparado con insumos frescos de nuestra granja y huerto, servido en el comedor principal para nuestros huéspedes.</p>
           </div>
+          <div class="feature" data-reveal>
+            <span class="feature__num">02</span>
+            <h4>Almuerzo y cena</h4>
+            <p>Platos típicos del Valle del Mantaro y menú del día. Abierto para huéspedes y visitantes externos previa reserva.</p>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="feature__num">03</span>
+            <h4>Banquetes y pachamancas</h4>
+            <p>Atención a grupos, delegaciones y eventos especiales con pachamanca tradicional y menús grupales bajo pedido.</p>
+          </div>
+          </div>
+          <p class="form__note" style="margin-top:30px" data-reveal>Horarios referenciales. Consúltenos para reservas de grupos, pachamancas y atención de eventos con anticipación.</p>
         </div>
       </section>
 
-      <section class="section section--gray">
-        <div class="container grid grid--split">
-          <div class="media media--wide" data-reveal><img src="assets/img/heladeria.jpg" data-fallback="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=900&q=80" alt="Heladería" loading="lazy" decoding="async"></div>
-          <div data-reveal>
-            <span class="eyebrow">Heladería</span>
-            <h2>El final dulce del día</h2>
-            <p class="lead">Nuestra heladería funciona dentro del recinto y está abierta también para quienes solo pasan de visita.</p>
-            <ul class="check-list" style="margin-top:26px">
-              <li>Sabores de la temporada</li>
-              <li>Abierta al público</li>
-              <li>Ideal después del almuerzo</li>
-              <li>Opciones para llevar</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
+      <section class="section section--tight">
         <div class="container">
-          <div class="grid grid--3">
-            <div class="feature" data-reveal><div class="feature__icon">☕</div><h4>Desayuno</h4><p>Incluido para huéspedes, servido en el comedor principal.</p></div>
-            <div class="feature" data-reveal><div class="feature__icon">🍽</div><h4>Almuerzo y cena</h4><p>Carta y menú del día. Abierto también a visitantes externos.</p></div>
-            <div class="feature" data-reveal><div class="feature__icon">⛾</div><h4>Servicio a la habitación</h4><p>Disponible para huéspedes durante el horario de cocina.</p></div>
+          <div class="gallery" data-gallery>
+            <figure class="gallery__item g-6" data-caption="Salón comedor"><img src="assets/img/rest-salon.jpg" alt="Salón comedor" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-6" data-caption="Comedor para delegaciones"><img src="assets/img/rest-comedor.jpg" alt="Comedor para delegaciones" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-4" data-caption="Mesa servida"><img src="assets/img/rest-mesa.jpg" alt="Mesa servida" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-4" data-caption="Mesas largas para grupos"><img src="assets/img/rest-mesas-largas.jpg" alt="Mesas largas para grupos" loading="lazy" decoding="async"></figure>
+            <figure class="gallery__item g-4" data-caption="Terraza"><img src="assets/img/rest-terraza.jpg" alt="Terraza" loading="lazy" decoding="async"></figure>
           </div>
-          <p class="form__note" style="margin-top:30px" data-reveal>Horarios referenciales. Consúltenos para reservas de grupos y pachamanca bajo pedido.</p>
         </div>
       </section>
 
       <section class="section cta-band">
-        <div class="cta-band__media"><img src="assets/img/cta-reserva.jpg" data-fallback="https://images.unsplash.com/photo-1518602164578-cd0074062767?auto=format&fit=crop&w=1800&q=80" alt="Reserve una mesa o un menú de grupo" loading="lazy" decoding="async"></div>
+        <div class="cta-band__media"><img src="assets/img/cta-reserva.jpg" alt="Reserve una mesa o un menú de grupo" loading="lazy" decoding="async"></div>
         <div class="container stack-center text-light" data-reveal>
           <span class="eyebrow">Reservas</span>
           <h2>Reserve una mesa o un menú de grupo</h2>
-          <p class="lead">Escríbanos con anticipación si viaja con delegación: preparamos menús cerrados y buffet a medida.</p>
-          <p style="margin-top:34px"><a class="btn btn--light" href="contacto.html">Consultar disponibilidad</a></p>
+          <p class="lead">Escríbanos con anticipación si viaja con delegación: preparamos menús cerrados, buffet y pachamanca a medida.</p>
+          <p style="margin-top:32px"><a class="btn" href="contacto.html">Consultar disponibilidad y cotizar</a></p>
         </div>
       </section>
     </main>
@@ -190,34 +203,36 @@
             <span class="brand__tag">Chupaca · Junín</span>
           </span>
         </a>
-          <p style="font-size:14px;max-width:34ch">Hospedaje, restaurante y centro de eventos en el valle del Mantaro. Un pedazo de tranquilidad a pocos minutos de Huancayo.</p>
+          <p style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
+          <div class="socials" style="margin-top:20px">
+            <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+            <a href="https://www.instagram.com/la_perla_campamento/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
+            <a href="https://www.tiktok.com/@laperlahospedaje" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8a4.3 4.3 0 01-1-2.8h-3.2v12.6a2.5 2.5 0 11-1.8-2.4V9.9a5.7 5.7 0 103.9 5.4V9.1a7.4 7.4 0 004.3 1.4V7.3a4.3 4.3 0 01-2.2-1.5z"/></svg></a>
+          </div>
         </div>
         <div>
-          <h4>Navegación</h4>
+          <h4>Menú principal</h4>
           <ul>
-            <li><a href="nosotros.html">Nosotros</a></li><li><a href="habitaciones.html">Habitaciones</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="eventos.html">Eventos</a></li>
+            <li><a href="index.html">Inicio</a></li><li><a href="hospedaje.html">Hospedaje</a></li><li><a href="retiros.html">Retiros</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="corporativos.html">Corporativos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h4>Servicios</h4>
+          <h4>Experiencias La Perla</h4>
           <ul>
-            <li><a href="recreacion.html">Áreas verdes y canchas</a></li>
-            <li><a href="eventos.html">Salones y banquetes</a></li>
-            <li><a href="restaurante.html">Restaurante y heladería</a></li>
-            <li><a href="eventos.html">Centro de negocios</a></li>
+            <li><a href="retiros.html">Jornadas y retiros escolares</a></li>
+            <li><a href="eventos.html">Cumpleaños infantiles en el campo</a></li>
+            <li><a href="corporativos.html">Team building y capacitaciones</a></li>
+            <li><a href="recreacion.html">Campamentos y campo abierto</a></li>
+            <li><a href="restaurante.html">Gastronomía tradicional</a></li>
           </ul>
         </div>
         <div>
           <h4>Contacto</h4>
           <ul>
             <li>Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
-            <li><a href="tel:+5199274692">992 74692</a></li>
-            <li><a href="mailto:reservas@campamentolaperla.com.pe">reservas@campamentolaperla.com.pe</a></li>
+            <li><a href="tel:+51992746927">992 746 927</a></li>
+            <li><a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a></li>
           </ul>
-          <div class="socials" style="margin-top:18px">
-            <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook">Fb</a>
-            <a href="https://wa.me/5199274692" target="_blank" rel="noopener" aria-label="WhatsApp">Wa</a>
-          </div>
         </div>
       </div>
       <div class="container site-footer__bottom">
@@ -226,8 +241,9 @@
       </div>
     </footer>
 
-    <a class="wa-float" href="https://wa.me/5199274692?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla"
-       target="_blank" rel="noopener"><strong>✆</strong><span>WhatsApp</span></a>
+    <a class="wa-float" href="https://wa.me/51992746927?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span>Conversemos</span>
+    </a>
 
     <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
 

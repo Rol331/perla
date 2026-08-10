@@ -3,22 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Recreación y áreas verdes · Campamento La Perla</title>
-    <meta name="description" content="Canchas de fútbol y vóley, gimnasio, jardines y zonas de descanso en Campamento La Perla, Chupaca. Pet friendly y estacionamiento gratuito.">
-    <meta name="author" content="Campamento La Perla">
-    <link rel="canonical" href="https://www.campamentolaperla.com.pe/recreacion.html">
+    <title>Recreación · Campamento La Perla</title>
+    <meta name="description" content="Canchas de fútbol y vóley, juegos de mesa, área infantil, fogatas, kayak y rutas en bicicleta en Campamento La Perla, Chupaca, Junín.">
+    <meta name="theme-color" content="#112b14">
+    <link rel="canonical" href="https://campamentolaperla.com.pe/recreacion.html">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Campamento La Perla">
-    <meta property="og:title" content="Recreación y áreas verdes · Campamento La Perla">
-    <meta property="og:description" content="Canchas de fútbol y vóley, gimnasio, jardines y zonas de descanso en Campamento La Perla, Chupaca. Pet friendly y estacionamiento gratuito.">
+    <meta property="og:title" content="Recreación · Campamento La Perla">
+    <meta property="og:description" content="Canchas de fútbol y vóley, juegos de mesa, área infantil, fogatas, kayak y rutas en bicicleta en Campamento La Perla, Chupaca, Junín.">
     <meta property="og:locale" content="es_PE">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Oswald:wght@200;300;400;500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/fallback.js"></script>
   </head>
   <body>
     <header class="site-header site-header--over" id="siteHeader">
@@ -32,18 +31,30 @@
         </a>
 
         <nav class="nav" aria-label="Navegación principal">
-            <a class="nav__link" href="index.html">Inicio</a>
-            <a class="nav__link" href="nosotros.html">Nosotros</a>
-            <a class="nav__link" href="habitaciones.html">Habitaciones</a>
-            <a class="nav__link" href="restaurante.html">Restaurante</a>
-            <a class="nav__link" href="eventos.html">Eventos</a>
-            <a class="nav__link is-active" href="recreacion.html">Recreación</a>
-            <a class="nav__link" href="galeria.html">Galería</a>
-            <a class="nav__link" href="contacto.html">Contacto</a>
+            <div class="nav__item"><a class="nav__link" href="index.html">Inicio</a></div>
+            <div class="nav__item">
+              <a class="nav__link" href="hospedaje.html">Hospedaje <span class="nav__caret">▼</span></a>
+              <div class="nav__sub">
+              <a href="hospedaje.html">Habitaciones</a>
+              <a href="restaurante.html">Restaurante</a>
+              </div>
+            </div>
+            <div class="nav__item"><a class="nav__link" href="retiros.html">Retiros</a></div>
+            <div class="nav__item">
+              <a class="nav__link is-active" href="eventos.html">Eventos <span class="nav__caret">▼</span></a>
+              <div class="nav__sub">
+              <a href="eventos.html">Eventos y fiestas</a>
+              <a href="recreacion.html" class="is-active">Recreación</a>
+              <a href="galeria.html">Galería</a>
+              </div>
+            </div>
+            <div class="nav__item"><a class="nav__link" href="corporativos.html">Corporativos</a></div>
+            <div class="nav__item"><a class="nav__link" href="nosotros.html">Nosotros</a></div>
+            <div class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></div>
         </nav>
 
         <div class="site-header__actions">
-          <a class="btn btn--ghost" href="contacto.html">Reservar</a>
+          <a class="btn btn--ghost" href="contacto.html">¡Reserva aquí!</a>
           <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
             <span></span><span></span><span></span>
           </button>
@@ -54,106 +65,143 @@
     <div class="mobile-menu" id="mobileMenu">
       <nav aria-label="Navegación móvil">
           <a href="index.html">Inicio</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="habitaciones.html">Habitaciones</a>
-          <a href="restaurante.html">Restaurante</a>
+          <a href="hospedaje.html">Hospedaje</a>
+          <a class="is-sub" href="restaurante.html">Restaurante</a>
+          <a href="retiros.html">Retiros</a>
           <a href="eventos.html">Eventos</a>
-          <a href="recreacion.html">Recreación</a>
-          <a href="galeria.html">Galería</a>
+          <a class="is-sub" href="recreacion.html">Recreación</a>
+          <a class="is-sub" href="galeria.html">Galería</a>
+          <a href="corporativos.html">Corporativos</a>
+          <a href="nosotros.html">Nosotros</a>
           <a href="contacto.html">Contacto</a>
       </nav>
       <div class="mobile-menu__foot">
         Av. La Eternidad 1085, Chupaca 12455<br>
-        <a href="tel:+5199274692">992 74692</a>
+        <a href="tel:+51992746927">992 746 927</a> · <a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a>
       </div>
     </div>
 
     <main>
       <section class="hero hero--compact page-head">
-        <div class="hero__media"><img src="assets/img/hero-recreacion.jpg" data-fallback="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=2000&q=80" alt="Deporte, jardines y descanso"></div>
+        <div class="hero__media"><img src="assets/img/hero-recreacion.jpg" alt="Deporte, jardines y diversión al aire libre" fetchpriority="high"></div>
         <div class="container hero__inner text-light" data-reveal>
           <span class="eyebrow">Recreación</span>
-          <h1 class="page-head__title">Deporte, jardines y descanso</h1>
-          <p class="hero__sub">Canchas de fútbol y vóley, gimnasio y amplias áreas verdes para desconectarse de verdad.</p>
+          <h1 class="page-head__title">Deporte, jardines y diversión al aire libre</h1>
+          <p class="hero__sub">Canchas deportivas, juegos de mesa, áreas infantiles, espacio para fogatas y amplios jardines para desconectarse de verdad.</p>
           <p class="breadcrumbs"><a href="index.html">Inicio</a> — <span>Recreación</span></p>
         </div>
       </section>
 
       <section class="section">
         <div class="container grid grid--split">
-          <div class="media media--wide" data-reveal><img src="assets/img/recreacion-1.jpg" data-fallback="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80" alt="Áreas verdes del campamento" loading="lazy" decoding="async"></div>
+          <div class="media media--wide" data-reveal><img src="assets/img/rec-aerea.jpg" alt="Vista aérea de las áreas verdes" loading="lazy" decoding="async"></div>
           <div data-reveal>
             <span class="eyebrow">Aire libre</span>
-            <h2>Espacio de sobra para moverse</h2>
-            <p class="lead">El recinto está diseñado alrededor de sus áreas verdes: flores, árboles y zonas de recreación que los huéspedes recorren a pie sin cruzarse con un solo auto.</p>
-            <p>Es el motivo por el que muchas familias eligen La Perla para pasar el fin de semana y por el que las empresas nos buscan para retiros de equipo.</p>
+            <h2>El espacio perfecto para desconectarse al aire libre</h2>
+            <p class="lead">El recinto está diseñado alrededor de sus áreas verdes: jardines cuidados, campos de juego y espacios de entretenimiento que los huéspedes y visitantes pueden disfrutar libremente en un ambiente seguro.</p>
+            <p>Es el motivo por el cual muchas familias eligen La Perla para pasar el fin de semana, celebrar cumpleaños infantiles o realizar integraciones escolares y retiros de equipo.</p>
           </div>
         </div>
       </section>
 
-      <section class="section section--gray">
+      <section class="section section--crema">
         <div class="container">
           <div class="stack-center section-head" data-reveal>
             <span class="eyebrow">Instalaciones</span>
             <h2>Qué puede hacer durante su estadía</h2>
           </div>
           <div class="grid grid--2">
-            <div class="card" data-reveal>
-              <div class="media media--wide"><img src="assets/img/recreacion-2.jpg" data-fallback="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=900&q=80" alt="Cancha de fútbol" loading="lazy" decoding="async"></div>
-              <div class="card__body"><p class="card__meta">Deporte</p><h3 class="card__title">Cancha de fútbol</h3><p>Para partidos entre huéspedes, delegaciones deportivas y actividades de integración.</p></div>
+          <div class="card" data-reveal>
+            <div class="media media--wide"><img src="assets/img/rec-cancha.jpg" alt="Cancha de fútbol y vóley" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">Deporte</p>
+              <h3 class="card__title">Cancha de fútbol y vóley</h3>
+              <p>Espacios acondicionados para partidos entre huéspedes, campeonatos de integración y dinámicas grupales.</p>
             </div>
-            <div class="card" data-reveal>
-              <div class="media media--wide"><img src="assets/img/recreacion-3.jpg" data-fallback="https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=900&q=80" alt="Cancha de vóley" loading="lazy" decoding="async"></div>
-              <div class="card__body"><p class="card__meta">Deporte</p><h3 class="card__title">Cancha de vóley</h3><p>Disponible para grupos y familias, muy usada en jornadas de capacitación.</p></div>
+          </div>
+          <div class="card" data-reveal>
+            <div class="media media--wide"><img src="assets/img/rec-sapito.jpg" alt="Juegos de mesa y recreación" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">Entretenimiento</p>
+              <h3 class="card__title">Juegos de mesa y recreación</h3>
+              <p>Contamos con fulbito de mesa y juego de sapito tradicionales para momentos divertidos en familia o entre amigos.</p>
             </div>
-            <div class="card" data-reveal>
-              <div class="media media--wide"><img src="assets/img/recreacion-4.jpg" data-fallback="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=900&q=80" alt="Gimnasio" loading="lazy" decoding="async"></div>
-              <div class="card__body"><p class="card__meta">Bienestar</p><h3 class="card__title">Gimnasio</h3><p>Acceso libre para huéspedes durante toda la estadía.</p></div>
+          </div>
+          <div class="card" data-reveal>
+            <div class="media media--wide"><img src="assets/img/rec-juegos.jpg" alt="Juegos recreativos para niños" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">Familiar</p>
+              <h3 class="card__title">Juegos recreativos para niños</h3>
+              <p>Área infantil en campo abierto pensada para la diversión segura y el entretenimiento de los más pequeños.</p>
             </div>
-            <div class="card" data-reveal>
-              <div class="media media--wide"><img src="assets/img/jardines.jpg" data-fallback="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=80" alt="Jardines y zonas de descanso" loading="lazy" decoding="async"></div>
-              <div class="card__body"><p class="card__meta">Descanso</p><h3 class="card__title">Jardines y zonas de descanso</h3><p>Bancas, sombra y caminos entre flores y árboles para leer o simplemente no hacer nada.</p></div>
+          </div>
+          <div class="card" data-reveal>
+            <div class="media media--wide"><img src="assets/img/rec-fogata.jpg" alt="Zonas de fogata y jardines" loading="lazy" decoding="async"></div>
+            <div class="card__body">
+              <p class="card__meta">Nocturno</p>
+              <h3 class="card__title">Zonas de fogata y jardines</h3>
+              <p>Espacios acondicionados para realizar fogatas nocturnas bajo las estrellas, acompañados de bancas y sombras entre árboles.</p>
             </div>
+          </div>
           </div>
         </div>
       </section>
 
       <section class="section">
-        <div class="container">
-          <div class="grid grid--3">
-            <div class="feature" data-reveal><div class="feature__icon">☺</div><h4>Pet friendly</h4><p>Su mascota es bienvenida en el recinto y en las áreas verdes.</p></div>
-            <div class="feature" data-reveal><div class="feature__icon">⛶</div><h4>Estacionamiento gratuito</h4><p>Espacio amplio dentro del recinto, sin costo adicional.</p></div>
-            <div class="feature" data-reveal><div class="feature__icon">≋</div><h4>Wi-Fi gratuito</h4><p>Cobertura en habitaciones y áreas comunes.</p></div>
+        <div class="container grid grid--split">
+          <div data-reveal>
+            <span class="eyebrow">Deporte y aventura</span>
+            <h2>Experiencias al aire libre para compartir en familia y amigos</h2>
+            <p class="lead">Desconéctate de la rutina y vive momentos llenos de energía con tu grupo favorito. Actividades deportivas y de aventura preparadas previa coordinación para garantizar diversión y seguridad.</p>
+            <div style="margin-top:26px">
+              <div style="padding:18px 0;border-bottom:1px solid var(--borde)">
+                <h4>Paseos en kayak</h4>
+                <p>Una aventura acuática ideal para remar en equipo, relajarse y disfrutar del paisaje junto a tus amigos o familia.</p>
+              </div>
+              <div style="padding:18px 0">
+                <h4>Rutas en bicicleta</h4>
+                <p>Paseos sobre dos ruedas por caminos campestres, ideales para explorar el entorno natural en grupo a tu propio ritmo.</p>
+              </div>
+            </div>
           </div>
+          <div class="media media--tall" data-reveal><img src="assets/img/rec-kayak.jpg" alt="Paseo en kayak" loading="lazy" decoding="async"></div>
         </div>
       </section>
 
-      <section class="section section--gray">
-        <div class="container grid grid--split">
-          <div data-reveal>
+      <section class="section section--verde">
+        <div class="container">
+          <div class="stack-center section-head" data-reveal>
             <span class="eyebrow">Alrededores</span>
-            <h2>Qué hay cerca</h2>
-            <p class="lead">Estamos lo suficientemente lejos del pueblo para tener silencio, pero a minutos de todo lo que vale la pena ver en el valle.</p>
-            <ul class="check-list" style="margin-top:26px">
-              <li>Centro de Chupaca</li>
-              <li>Laguna Ñahuinpuquio</li>
-              <li>Huancayo y el valle del Mantaro</li>
-              <li>Ferias y mercados de la zona</li>
-              <li>Real Plaza Huancayo</li>
-              <li>Restaurantes y atractivos locales</li>
-            </ul>
+            <h2>Toda la magia del Valle del Mantaro a unos pasos</h2>
+            <p class="lead">Lo mejor de dos mundos: el silencio reconfortante del campo y la cercanía inmediata a los íconos turísticos, la gastronomía y la artesanía viva de la región.</p>
           </div>
-          <div class="media media--wide" data-reveal><img src="assets/img/nosotros-3.jpg" data-fallback="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=1200&q=80" alt="Paisaje del valle" loading="lazy" decoding="async"></div>
+          <div class="grid grid--3">
+          <div class="feature" data-reveal>
+            <span class="feature__num">01</span>
+            <h4>Puntos históricos</h4>
+            <p>Recorre la Plaza de la Constitución, la Catedral y el Parque de la Identidad Wanka a minutos de tu estancia.</p>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="feature__num">02</span>
+            <h4>Aventura y paisajes</h4>
+            <p>Visita la Laguna Ñahuinpuquio, la vista panorámica del Cerrito de la Libertad y las imponentes torres de arcilla de Torre Torre.</p>
+          </div>
+          <div class="feature" data-reveal>
+            <span class="feature__num">03</span>
+            <h4>Cultura y tradición</h4>
+            <p>Conecta con la historia en Wariwillka y descubre los talleres artesanales de Cochas, Hualhuas y San Jerónimo.</p>
+          </div>
+          </div>
         </div>
       </section>
 
       <section class="section cta-band">
-        <div class="cta-band__media"><img src="assets/img/cta-final.jpg" data-fallback="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1800&q=80" alt="Un fin de semana sin apuro" loading="lazy" decoding="async"></div>
+        <div class="cta-band__media"><img src="assets/img/cta-final.jpg" alt="Un fin de semana sin apuro" loading="lazy" decoding="async"></div>
         <div class="container stack-center text-light" data-reveal>
           <span class="eyebrow">Escapadas</span>
           <h2>Un fin de semana sin apuro</h2>
           <p class="lead">Reserve con anticipación en feriados largos: son las fechas que primero se llenan.</p>
-          <p style="margin-top:34px"><a class="btn btn--light" href="contacto.html">Consultar disponibilidad</a></p>
+          <p style="margin-top:32px"><a class="btn" href="contacto.html">Consultar disponibilidad y cotizar</a></p>
         </div>
       </section>
     </main>
@@ -168,34 +216,36 @@
             <span class="brand__tag">Chupaca · Junín</span>
           </span>
         </a>
-          <p style="font-size:14px;max-width:34ch">Hospedaje, restaurante y centro de eventos en el valle del Mantaro. Un pedazo de tranquilidad a pocos minutos de Huancayo.</p>
+          <p style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
+          <div class="socials" style="margin-top:20px">
+            <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
+            <a href="https://www.instagram.com/la_perla_campamento/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
+            <a href="https://www.tiktok.com/@laperlahospedaje" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8a4.3 4.3 0 01-1-2.8h-3.2v12.6a2.5 2.5 0 11-1.8-2.4V9.9a5.7 5.7 0 103.9 5.4V9.1a7.4 7.4 0 004.3 1.4V7.3a4.3 4.3 0 01-2.2-1.5z"/></svg></a>
+          </div>
         </div>
         <div>
-          <h4>Navegación</h4>
+          <h4>Menú principal</h4>
           <ul>
-            <li><a href="nosotros.html">Nosotros</a></li><li><a href="habitaciones.html">Habitaciones</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="eventos.html">Eventos</a></li>
+            <li><a href="index.html">Inicio</a></li><li><a href="hospedaje.html">Hospedaje</a></li><li><a href="retiros.html">Retiros</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="corporativos.html">Corporativos</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h4>Servicios</h4>
+          <h4>Experiencias La Perla</h4>
           <ul>
-            <li><a href="recreacion.html">Áreas verdes y canchas</a></li>
-            <li><a href="eventos.html">Salones y banquetes</a></li>
-            <li><a href="restaurante.html">Restaurante y heladería</a></li>
-            <li><a href="eventos.html">Centro de negocios</a></li>
+            <li><a href="retiros.html">Jornadas y retiros escolares</a></li>
+            <li><a href="eventos.html">Cumpleaños infantiles en el campo</a></li>
+            <li><a href="corporativos.html">Team building y capacitaciones</a></li>
+            <li><a href="recreacion.html">Campamentos y campo abierto</a></li>
+            <li><a href="restaurante.html">Gastronomía tradicional</a></li>
           </ul>
         </div>
         <div>
           <h4>Contacto</h4>
           <ul>
             <li>Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
-            <li><a href="tel:+5199274692">992 74692</a></li>
-            <li><a href="mailto:reservas@campamentolaperla.com.pe">reservas@campamentolaperla.com.pe</a></li>
+            <li><a href="tel:+51992746927">992 746 927</a></li>
+            <li><a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a></li>
           </ul>
-          <div class="socials" style="margin-top:18px">
-            <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook">Fb</a>
-            <a href="https://wa.me/5199274692" target="_blank" rel="noopener" aria-label="WhatsApp">Wa</a>
-          </div>
         </div>
       </div>
       <div class="container site-footer__bottom">
@@ -204,8 +254,9 @@
       </div>
     </footer>
 
-    <a class="wa-float" href="https://wa.me/5199274692?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla"
-       target="_blank" rel="noopener"><strong>✆</strong><span>WhatsApp</span></a>
+    <a class="wa-float" href="https://wa.me/51992746927?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span>Conversemos</span>
+    </a>
 
     <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
 

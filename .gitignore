@@ -14,3 +14,7 @@ node_modules/
 
 # Claude Code (configuración local)
 .claude/
+
+# Fuentes originales de fotos y brief (no se publican)
+/img/
+/*.pdf

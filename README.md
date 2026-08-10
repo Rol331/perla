@@ -1,123 +1,108 @@
 # Campamento La Perla — sitio web
 
 Sitio estático en HTML, CSS y JavaScript puro (sin frameworks ni build).
-Diseño basado en la plantilla **Luxex** (tipografías Montserrat / Raleway /
-Oswald, paleta blanco–gris–negro con acento dorado `#f3bf3d`).
+Contenido, marca y estructura según **«PÁGINA WEB LA PERLA.pdf»**.
+
+- **En línea:** https://rol331.github.io/perla/
+
+## Marca
+
+| Color | Hex | Uso |
+|---|---|---|
+| Verde | `#112b14` | Fondos oscuros, títulos, pie de página |
+| Naranja | `#d9880e` | Botones, acentos, cifras, antetítulos |
+| Crema | `#fffcdf` | Fondos claros alternos |
+
+**Tipografías:** Valden para los títulos, Inter para el cuerpo.
+
+> **Valden todavía no está instalada.** No pude descargarla del Google Drive
+> del brief. El CSS ya la tiene declarada: copie el archivo en
+> `assets/fonts/valden.woff2` (o `.woff` / `.otf`) y los títulos cambian solos,
+> sin tocar nada más. Mientras tanto se muestra Playfair Display, que mantiene
+> el mismo peso visual.
 
 ## Cómo verlo
-
-Abra `index.html` en el navegador, o levante un servidor local:
 
 ```bash
 python3 -m http.server 8000
 # luego abra http://localhost:8000
 ```
 
-> El formulario y el visor de imágenes funcionan igual con doble clic, pero
-> conviene usar el servidor local para que el mapa y las fuentes carguen bien.
-
 ## Estructura
 
 ```
 .
-├── index.html                Inicio
-├── nosotros.html             Historia, instalaciones, cifras
-├── habitaciones.html         Listado de los 4 tipos de habitación
-│   ├── habitacion-doble.html      Ficha de detalle
-│   └── habitacion-familiar.html   Ficha de detalle
-├── restaurante.html          Carta, heladería, horarios
-├── eventos.html              Bodas, convenciones, capacitaciones
-├── recreacion.html           Canchas, gimnasio, jardines, alrededores
-├── galeria.html              Galería con visor a pantalla completa
-├── contacto.html             Formulario, datos y mapa
+├── index.html            Inicio (carrusel de 3 fotos)
+├── hospedaje.html        Bungalows y habitaciones
+├── restaurante.html      Cocina campestre y carta
+├── retiros.html          Jornadas espirituales y retiros escolares
+├── eventos.html          Fiestas, banquetes y celebraciones
+├── corporativos.html     Capacitaciones y team building
+├── recreacion.html       Deporte, juegos, fogatas y alrededores
+├── galeria.html          Galería con visor a pantalla completa
+├── nosotros.html         Historia desde 1968
+├── contacto.html         Formulario, datos y mapa
 └── assets/
-    ├── css/style.css         Toda la hoja de estilos (comentada por secciones)
-    ├── js/main.js            Menú, scroll, slider, visor, contadores, formularios
-    ├── js/fallback.js        Respaldo automático de imágenes
-    └── img/                  Aquí van las fotos — ver assets/img/LEEME.txt
+    ├── css/style.css     Hoja de estilos (comentada por secciones)
+    ├── js/main.js        Menú, carrusel, visor, animaciones, formulario
+    ├── fonts/            ← aquí va valden.woff2
+    └── img/              73 fotos procesadas (16 MB)
 ```
+
+### Menú
+
+El PDF pide `Inicio | Hospedaje | Retiros | Eventos | Corporativos | Nosotros |
+Contacto`, pero también trae contenido para Restaurante, Recreación y Galería.
+Se resolvió con dos submenús:
+
+- **Hospedaje** › Habitaciones · Restaurante
+- **Eventos** › Eventos y fiestas · Recreación · Galería
 
 ## Imágenes
 
-Las fotos de Facebook no se pudieron descargar (Facebook bloquea el acceso sin
-sesión iniciada), así que el sitio usa **imágenes temáticas provisionales de
-Unsplash** como referencia visual.
+Las 73 fotos salen de las carpetas originales en `img/` (que se mantiene como
+fuente y **no se publica**). El script de procesamiento las redimensiona y
+comprime a JPEG progresivo.
 
-Para poner las reales basta con copiar los archivos en `assets/img/` con los
-nombres indicados en **`assets/img/LEEME.txt`**. No hay que editar el HTML: el
-script `fallback.js` usa el archivo local si existe y recurre a la imagen
-provisional solo si falta.
+Para regenerarlas tras añadir o cambiar fotos, edite el mapa `MAP` del script
+de procesamiento y vuelva a ejecutarlo.
 
-## Pendiente de confirmar antes de publicar
+**Falta una foto:** no hay ninguna del dormitorio militar / grupal, así que esa
+tarjeta usa por ahora una imagen de un ambiente compartido. Si consiguen la
+foto, reemplacen `assets/img/hab-grupal.jpg`.
 
-Estos datos vienen de fuentes públicas (InfoIsInfo, TripAdvisor) y conviene
-verificarlos con el cliente:
+## Datos de contacto
 
-| Dato | Valor actual | Dónde se cambia |
-|---|---|---|
-| **Teléfono** | `992 74692` | `assets/js/main.js` (const `WHATSAPP`) y las páginas HTML |
-| **Correo** | `reservas@campamentolaperla.com.pe` | páginas HTML (inventado, hay que confirmarlo) |
-| Dirección | Av. La Eternidad 1085, Chupaca 12455, Junín | páginas HTML |
-| Tarifas | Aparecen como “Consultar” | `habitaciones.html` y fichas de detalle |
-| Horarios | Check-in 14:00 / check-out 12:00 (referenciales) | `habitaciones.html` |
-| Carta del restaurante | Platos de ejemplo | `restaurante.html` |
+| Dato | Valor |
+|---|---|
+| Dirección | Av. La Eternidad 1085, Chupaca 12455, Junín, Perú |
+| Teléfono / WhatsApp | 992 746 927 |
+| Correo | campamentolaperla@gmail.com |
+| Facebook | facebook.com/laperlachupaca |
+| Instagram | instagram.com/la_perla_campamento |
+| TikTok | tiktok.com/@laperlahospedaje |
 
-El teléfono público figura con 8 dígitos, pero los móviles peruanos tienen 9.
-**Hay que confirmar el número completo** antes de publicar: se usa en los
-enlaces `tel:` y en el botón de WhatsApp.
-
-## Formularios
+## Formulario
 
 No hay backend. Al enviar, el formulario arma un mensaje de WhatsApp con los
-datos y lo abre en una pestaña nueva. Si más adelante quiere recibirlos por
-correo, reemplace el bloque final de `assets/js/main.js` por un `fetch()` a su
-endpoint (Formspree, Vercel Functions, etc.).
+datos y lo abre en una pestaña nueva. Para recibirlos por correo, reemplace el
+bloque final de `assets/js/main.js` por un `fetch()` a su endpoint (Formspree,
+Vercel Functions, etc.).
 
 ## Publicación en GitHub Pages
 
-El repositorio ya está inicializado y con el primer commit hecho. Faltan dos
-pasos:
-
-**1. Cree el repositorio en GitHub** (vacío, sin README ni .gitignore) y suba
-el código:
-
-```bash
-git remote add origin https://github.com/USUARIO/REPO.git
-git push -u origin main
-```
-
-**2. Active Pages** en el repositorio: *Settings → Pages → Source: Deploy from
-a branch → Branch: `main` / carpeta `/ (root)` → Save*.
-
-En un par de minutos queda publicado en `https://USUARIO.github.io/REPO/`.
-
-Para actualizarlo después, basta con:
+Ya está configurado. Para actualizar:
 
 ```bash
 git add -A && git commit -m "descripción del cambio" && git push
 ```
 
-### Notas sobre Pages
-
-- El archivo `.nojekyll` está incluido para que GitHub publique la carpeta tal
-  cual, sin procesarla con Jekyll.
-- Todas las rutas son relativas, así que el sitio funciona igual en la raíz de
-  un dominio que en un subdirectorio (`usuario.github.io/repo/`).
-- Si más adelante usa un dominio propio, actualice las etiquetas
-  `<link rel="canonical">` de cada página, que hoy apuntan a
-  `campamentolaperla.com.pe`.
-
-### Otras opciones
-
-Al ser estático sirve cualquier hosting. Con Vercel:
-
-```bash
-npx vercel deploy --prod
-```
+Pages se reconstruye solo en 1–2 minutos.
 
 ## Notas técnicas
 
 - Sin dependencias externas salvo Google Fonts y el mapa embebido.
-- Responsive a partir de 320 px; menú a pantalla completa en móvil.
-- Respeta `prefers-reduced-motion`.
+- Responsive desde 320 px; menú a pantalla completa en móvil.
+- Respeta `prefers-reduced-motion` (incluido el carrusel de portada).
 - Etiquetas `<title>`, `description` y Open Graph propias en cada página.
+- Carga diferida en todas las imágenes salvo las de portada.

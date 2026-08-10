@@ -5,6 +5,9 @@
 (function () {
   "use strict";
 
+  var WHATSAPP = "51992746927";
+  var TELEFONO = "992 746 927";
+
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) {
     return Array.prototype.slice.call((ctx || document).querySelectorAll(sel));
@@ -46,6 +49,33 @@
     });
   }
 
+  /* ------------------------------------------------- carrusel de portada */
+  var heroSlides = $("#heroSlides");
+  if (heroSlides) {
+    var slides = $$(".hero__slide", heroSlides);
+    var dots = $$("button", $("#heroDots") || document.createElement("div"));
+    var current = 0;
+    var heroTimer = null;
+
+    var goSlide = function (i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach(function (s, si) { s.classList.toggle("is-active", si === current); });
+      dots.forEach(function (d, di) { d.classList.toggle("is-active", di === current); });
+    };
+    var playHero = function () {
+      stopHero();
+      if (slides.length > 1) heroTimer = setInterval(function () { goSlide(current + 1); }, 6000);
+    };
+    var stopHero = function () { if (heroTimer) clearInterval(heroTimer); };
+
+    dots.forEach(function (d, di) {
+      d.addEventListener("click", function () { goSlide(di); playHero(); });
+    });
+
+    /* No animar si el visitante pidió menos movimiento */
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) playHero();
+  }
+
   /* ------------------------------------------------------- volver arriba */
   var toTop = $("#toTop");
   if (toTop) {
@@ -77,92 +107,13 @@
     }
   }
 
-  /* ------------------------------------------------------------ contadores */
-  var counters = $$("[data-count]");
-  if (counters.length && "IntersectionObserver" in window) {
-    var countObserver = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var el = entry.target;
-        obs.unobserve(el);
-        var target = parseInt(el.getAttribute("data-count"), 10);
-        var suffix = el.getAttribute("data-suffix") || "";
-        if (isNaN(target)) return;
-        var start = null;
-        var duration = 1400;
-        var step = function (ts) {
-          if (start === null) start = ts;
-          var p = Math.min((ts - start) / duration, 1);
-          var eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(target * eased) + suffix;
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      });
-    }, { threshold: 0.4 });
-    counters.forEach(function (el) { countObserver.observe(el); });
-  }
-
-  /* ------------------------------------------------- slider de testimonios */
-  $$(".slider").forEach(function (slider) {
-    var track = $(".slider__track", slider);
-    var slides = $$(".slider__slide", slider);
-    if (!track || slides.length < 2) return;
-
-    var dotsWrap = document.querySelector('.slider__dots[data-for="' + slider.id + '"]');
-    var dots = dotsWrap ? $$("button", dotsWrap) : [];
-    var index = 0;
-    var timer = null;
-
-    var go = function (i) {
-      index = (i + slides.length) % slides.length;
-      track.style.transform = "translateX(-" + index * 100 + "%)";
-      dots.forEach(function (d, di) { d.classList.toggle("is-active", di === index); });
-    };
-    var play = function () {
-      stop();
-      timer = setInterval(function () { go(index + 1); }, 6500);
-    };
-    var stop = function () { if (timer) clearInterval(timer); };
-
-    dots.forEach(function (d, di) {
-      d.addEventListener("click", function () { go(di); play(); });
-    });
-    slider.addEventListener("mouseenter", stop);
-    slider.addEventListener("mouseleave", play);
-
-    /* deslizar con el dedo */
-    var startX = null;
-    slider.addEventListener("touchstart", function (e) {
-      startX = e.touches[0].clientX;
-      stop();
-    }, { passive: true });
-    slider.addEventListener("touchend", function (e) {
-      if (startX === null) return;
-      var dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 45) go(index + (dx < 0 ? 1 : -1));
-      startX = null;
-      play();
-    });
-
-    go(0);
-    play();
-  });
-
-  /* ------------------------------------------------------------- lightbox */
+  /* ------------------------------------------------------------- visor */
   var lightbox = $("#lightbox");
   var lightboxImg = $("#lightboxImg");
   var lightboxCaption = $("#lightboxCaption");
   var lbItems = [];
   var lbIndex = 0;
 
-  var openLightbox = function (items, i) {
-    if (!lightbox) return;
-    lbItems = items;
-    showLightbox(i);
-    lightbox.classList.add("is-open");
-    document.body.classList.add("is-locked");
-  };
   var showLightbox = function (i) {
     if (!lbItems.length) return;
     lbIndex = (i + lbItems.length) % lbItems.length;
@@ -171,6 +122,13 @@
     lightboxImg.alt = item.caption;
     lightboxCaption.textContent =
       item.caption + "  ·  " + (lbIndex + 1) + " / " + lbItems.length;
+  };
+  var openLightbox = function (items, i) {
+    if (!lightbox) return;
+    lbItems = items;
+    showLightbox(i);
+    lightbox.classList.add("is-open");
+    document.body.classList.add("is-locked");
   };
   var closeLightbox = function () {
     if (!lightbox) return;
@@ -182,19 +140,13 @@
     var figures = $$(".gallery__item", gallery);
     var items = figures.map(function (fig) {
       var im = $("img", fig);
-      return {
-        el: im,
-        caption: fig.getAttribute("data-caption") || (im ? im.alt : "")
-      };
+      return { el: im, caption: fig.getAttribute("data-caption") || (im ? im.alt : "") };
     });
     figures.forEach(function (fig, i) {
       fig.addEventListener("click", function () {
-        openLightbox(
-          items.map(function (it) {
-            return { src: it.el ? it.el.currentSrc || it.el.src : "", caption: it.caption };
-          }),
-          i
-        );
+        openLightbox(items.map(function (it) {
+          return { src: it.el ? it.el.currentSrc || it.el.src : "", caption: it.caption };
+        }), i);
       });
     });
   });
@@ -214,11 +166,9 @@
     });
   }
 
-  /* -------------------------------------------------------------- formularios
-     Sin backend: se arma un mensaje de WhatsApp con los datos del formulario.
-     Para enviar por correo, reemplace este bloque por su propio endpoint. */
-  var WHATSAPP = "5199274692";
-
+  /* -------------------------------------------------------------- formulario
+     Sin backend: arma un mensaje de WhatsApp con los datos del formulario.
+     Para recibirlos por correo, reemplace este bloque por su propio endpoint. */
   var labelFor = function (field) {
     var lbl = field.form.querySelector('label[for="' + field.id + '"]');
     return lbl ? lbl.textContent.trim() : field.name;
@@ -232,25 +182,22 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
 
-      var lines = [
-        kind === "contacto"
-          ? "Hola, escribo desde la web de Campamento La Perla."
-          : "Hola, quisiera consultar disponibilidad en Campamento La Perla."
-      ];
+      var lines = ["Hola, escribo desde la web de Campamento La Perla."];
       $$("input, select, textarea", form).forEach(function (field) {
         if (!field.value) return;
         lines.push(labelFor(field) + ": " + field.value);
       });
 
-      var url =
-        "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
-      window.open(url, "_blank", "noopener");
+      window.open(
+        "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n")),
+        "_blank", "noopener"
+      );
 
       if (status) {
         status.hidden = false;
         status.textContent =
           "Abrimos WhatsApp con su consulta lista para enviar. Si no se abrió, escríbanos al " +
-          "992 74692.";
+          TELEFONO + ".";
       }
     });
   });
