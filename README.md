@@ -13,13 +13,19 @@ Contenido, marca y estructura según **«PÁGINA WEB LA PERLA.pdf»**.
 | Naranja | `#d9880e` | Botones, acentos, cifras, antetítulos |
 | Crema | `#fffcdf` | Fondos claros alternos |
 
-**Tipografías:** Valden para los títulos, Inter para el cuerpo.
+**Tipografías:** Valden para los títulos, Inter para el cuerpo. Ambas están
+**autoalojadas** en `assets/fonts/` (convertidas a woff2 desde los archivos
+originales de `fuentes/`), así que el sitio no depende de Google Fonts.
 
-> **Valden todavía no está instalada.** No pude descargarla del Google Drive
-> del brief. El CSS ya la tiene declarada: copie el archivo en
-> `assets/fonts/valden.woff2` (o `.woff` / `.otf`) y los títulos cambian solos,
-> sin tocar nada más. Mientras tanto se muestra Playfair Display, que mantiene
-> el mismo peso visual.
+| Archivo | Origen | Peso |
+|---|---|---|
+| `valden.woff2` | `fuentes/valden.otf` | 21 KB |
+| `inter.woff2` | `fuentes/Inter-VariableFont_opsz,wght.ttf` | 341 KB (variable, pesos 100–900) |
+
+**Logotipo:** `assets/img/logo-claro.png` (texto crema, para fondos oscuros y
+foto) y `assets/img/logo-oscuro.png` (texto verde, para la cabecera blanca al
+hacer scroll). La variante oscura se generó a partir de la clara recoloreando
+el texto; el icono naranja se mantiene igual. El favicon sale del mismo icono.
 
 ## Cómo verlo
 

@@ -6,18 +6,22 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Tipografía Valden
-   --------------------------------------------------------------------------
-   Copie el archivo de la fuente en assets/fonts/ con estos nombres y los
-   títulos cambiarán solos. Mientras no exista, se usa el sustituto de la
-   pila (Playfair Display), que mantiene el mismo peso visual.
+   1. Tipografías (autoalojadas, sin depender de Google Fonts)
    -------------------------------------------------------------------------- */
 @font-face {
   font-family: "Valden";
-  src: url("../fonts/valden.woff2") format("woff2"),
-       url("../fonts/valden.woff") format("woff"),
-       url("../fonts/valden.otf") format("opentype");
+  src: url("../fonts/valden.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter variable: cubre todos los pesos de 100 a 900 en un solo archivo */
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter.woff2") format("woff2-variations"),
+       url("../fonts/inter.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -26,7 +30,7 @@
    2. Tokens
    -------------------------------------------------------------------------- */
 :root {
-  --font-display: "Valden", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: "Valden", "Trebuchet MS", Avenir, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Colores corporativos */
@@ -253,35 +257,19 @@ p:last-child { margin-bottom: 0; }
   width: 100%;
 }
 
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font-family: var(--font-display);
-  font-size: 17px;
-  letter-spacing: 0;
+/* Logotipo: dos variantes, se alternan según el fondo */
+.brand { display: block; flex-shrink: 0; line-height: 0; }
+.brand__logo {
+  display: block;
+  width: auto;
+  height: 54px;
+  transition: height 0.4s var(--ease);
 }
-.brand__text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand__name {
-  font-family: var(--font-display);
-  font-size: 21px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.brand__tag {
-  font-family: var(--font-body);
-  font-size: 8.5px;
-  font-weight: 600;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  opacity: 0.72;
-}
+.brand__logo--oscuro { display: none; }
+.site-header.is-stuck .brand__logo { height: 42px; }
+.site-header.is-stuck .brand__logo--claro { display: none; }
+.site-header.is-stuck .brand__logo--oscuro { display: block; }
+.site-footer .brand__logo { height: 52px; }
 
 .nav { display: flex; align-items: center; gap: clamp(12px, 1.8vw, 28px); }
 .nav__item { position: relative; }
@@ -454,7 +442,7 @@ p:last-child { margin-bottom: 0; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(17, 43, 20, 0.5) 0%, rgba(17, 43, 20, 0.18) 42%, rgba(17, 43, 20, 0.78) 100%);
+  background: linear-gradient(180deg, rgba(17, 43, 20, 0.58) 0%, rgba(17, 43, 20, 0.3) 38%, rgba(17, 43, 20, 0.85) 100%);
 }
 
 /* Carrusel de portada */

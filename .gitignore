@@ -15,6 +15,12 @@ node_modules/
 # Claude Code (configuración local)
 .claude/
 
-# Fuentes originales de fotos y brief (no se publican)
+# Material fuente del cliente (no se publica; los derivados sí)
 /img/
+/fuentes/
 /*.pdf
+/LA PERLA LOGOTIPO*.png
+
+# Temporales de revisión
+_rev.html
+_probe.html
