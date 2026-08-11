@@ -22,10 +22,10 @@ originales de `fuentes/`), así que el sitio no depende de Google Fonts.
 | `valden.woff2` | `fuentes/valden.otf` | 21 KB |
 | `inter.woff2` | `fuentes/Inter-VariableFont_opsz,wght.ttf` | 341 KB (variable, pesos 100–900) |
 
-**Logotipo:** `assets/img/logo-claro.png` (texto crema, para fondos oscuros y
-foto) y `assets/img/logo-oscuro.png` (texto verde, para la cabecera blanca al
-hacer scroll). La variante oscura se generó a partir de la clara recoloreando
-el texto; el icono naranja se mantiene igual. El favicon sale del mismo icono.
+**Logotipo:** `assets/img/logo-claro.png` (texto crema). Es la única variante
+que hace falta: la cabecera va siempre sobre fondo oscuro — la foto de portada
+al principio y el verde corporativo al hacer scroll. El favicon sale del mismo
+icono.
 
 ## Cómo verlo
 
