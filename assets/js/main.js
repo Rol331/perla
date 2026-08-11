@@ -47,6 +47,14 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) toggleMenu(false);
     });
+    /* Cerrar al hacer clic fuera del menú */
+    document.addEventListener("click", function (e) {
+      if (mobileMenu.classList.contains("is-open") &&
+          !mobileMenu.contains(e.target) &&
+          !burger.contains(e.target)) {
+        toggleMenu(false);
+      }
+    });
   }
 
   /* ------------------------------------------------- carrusel de portada */
@@ -113,6 +121,32 @@
   var lightboxCaption = $("#lightboxCaption");
   var lbItems = [];
   var lbIndex = 0;
+  var lbLastFocus = null;
+
+  var getFocusable = function (container) {
+    return $$(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      container
+    ).filter(function (el) {
+      return el.offsetParent !== null;
+    });
+  };
+
+  var trapFocus = function (e, container) {
+    var focusable = getFocusable(container);
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.key === "Tab") {
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  };
 
   var showLightbox = function (i) {
     if (!lbItems.length) return;
@@ -123,17 +157,27 @@
     lightboxCaption.textContent =
       item.caption + "  ·  " + (lbIndex + 1) + " / " + lbItems.length;
   };
-  var openLightbox = function (items, i) {
+  var openLightbox = function (items, i, triggerEl) {
     if (!lightbox) return;
     lbItems = items;
+    lbLastFocus = triggerEl || document.activeElement;
     showLightbox(i);
     lightbox.classList.add("is-open");
     document.body.classList.add("is-locked");
+    /* Mover foco al primer elemento focusable del lightbox */
+    setTimeout(function () {
+      var focusable = getFocusable(lightbox);
+      if (focusable.length) focusable[0].focus();
+    }, 50);
   };
   var closeLightbox = function () {
     if (!lightbox) return;
     lightbox.classList.remove("is-open");
     document.body.classList.remove("is-locked");
+    /* Retornar foco al elemento que abrió el lightbox */
+    if (lbLastFocus && lbLastFocus.focus) {
+      setTimeout(function () { lbLastFocus.focus(); }, 50);
+    }
   };
 
   $$("[data-gallery]").forEach(function (gallery) {
@@ -146,7 +190,18 @@
       fig.addEventListener("click", function () {
         openLightbox(items.map(function (it) {
           return { src: it.el ? it.el.currentSrc || it.el.src : "", caption: it.caption };
-        }), i);
+        }), i, fig);
+      });
+      /* Hacer las figuras focusables para accesibilidad */
+      fig.setAttribute("tabindex", "0");
+      fig.setAttribute("role", "button");
+      fig.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openLightbox(items.map(function (it) {
+            return { src: it.el ? it.el.currentSrc || it.el.src : "", caption: it.caption };
+          }), i, fig);
+        }
       });
     });
   });
@@ -163,6 +218,7 @@
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowLeft") showLightbox(lbIndex - 1);
       if (e.key === "ArrowRight") showLightbox(lbIndex + 1);
+      if (e.key === "Tab") trapFocus(e, lightbox);
     });
   }
 
