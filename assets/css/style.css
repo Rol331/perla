@@ -632,6 +632,9 @@ a:hover > .media img, .card:hover .media img, .media:hover img { transform: scal
   color: var(--naranja);
 }
 .section--verde .stat__num, .text-light .stat__num { color: var(--crema); }
+/* Sobre el naranja, cifra y etiqueta van del mismo color */
+.section--naranja .stat__num,
+.section--naranja .stat__label { color: #fff; }
 .stat__label {
   margin-top: 12px;
   font-size: 11px;
