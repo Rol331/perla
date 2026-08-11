@@ -587,9 +587,12 @@ a:hover > .media img, .card:hover .media img, .media:hover img { transform: scal
   line-height: 1;
   color: var(--naranja);
 }
+.feature__icon svg { width: 26px; height: 26px; }
 .text-light .feature__icon,
 .section--naranja .feature__icon,
 .section--verde .feature__icon { color: inherit; border-color: rgba(255, 255, 255, 0.3); }
+/* Sobre el verde, el icono va en naranja para que destaque */
+.section--verde .feature__icon { color: var(--naranja); border-color: rgba(255, 255, 255, 0.22); }
 .feature h4 { margin-bottom: 9px; }
 .feature p { font-size: 15px; }
 
