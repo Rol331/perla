@@ -8,6 +8,14 @@
   var WHATSAPP = "51992746927";
   var TELEFONO = "992 746 927";
 
+  /* Traducción: si assets/js/i18n.js está cargado se usa; si no, queda el
+     texto en español que se pasa como respaldo. */
+  var i18n = function () { return window.LaPerlaI18n || null; };
+  var t = function (key, respaldo) {
+    var api = i18n();
+    return api ? api.t(key) : respaldo;
+  };
+
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) {
     return Array.prototype.slice.call((ctx || document).querySelectorAll(sel));
@@ -35,7 +43,9 @@
       burger.classList.toggle("is-open", open);
       mobileMenu.classList.toggle("is-open", open);
       burger.setAttribute("aria-expanded", String(open));
-      burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      burger.setAttribute("aria-label", open
+        ? t("ui-cerrar-menu", "Cerrar menú")
+        : t("abrir-menu", "Abrir menú"));
       document.body.classList.toggle("is-locked", open);
     };
     burger.addEventListener("click", function () {
@@ -227,7 +237,21 @@
      Para recibirlos por correo, reemplace este bloque por su propio endpoint. */
   var labelFor = function (field) {
     var lbl = field.form.querySelector('label[for="' + field.id + '"]');
-    return lbl ? lbl.textContent.trim() : field.name;
+    if (!lbl) return field.name;
+    var api = i18n();
+    var key = lbl.getAttribute("data-i18n");
+    /* Se envía el rótulo en español, aunque el visitante vea otro idioma */
+    return api && key ? api.es(key) : lbl.textContent.trim();
+  };
+
+  /* Valor del campo en español (las opciones del <select> se traducen) */
+  var valueFor = function (field) {
+    if (field.tagName !== "SELECT") return field.value;
+    var opt = field.options[field.selectedIndex];
+    if (!opt) return field.value;
+    var api = i18n();
+    var key = opt.getAttribute("data-i18n");
+    return api && key ? api.es(key) : opt.textContent.trim();
   };
 
   $$("[data-form]").forEach(function (form) {
@@ -239,9 +263,14 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
 
       var lines = ["Hola, escribo desde la web de Campamento La Perla."];
+      var api = i18n();
+      /* Aviso para quien atiende: en qué idioma navega el visitante */
+      if (api && api.current() !== "es") {
+        lines.push("Idioma del visitante: " + api.name());
+      }
       $$("input, select, textarea", form).forEach(function (field) {
         if (!field.value) return;
-        lines.push(labelFor(field) + ": " + field.value);
+        lines.push(labelFor(field) + ": " + valueFor(field));
       });
 
       window.open(
@@ -251,9 +280,9 @@
 
       if (status) {
         status.hidden = false;
-        status.textContent =
-          "Abrimos WhatsApp con su consulta lista para enviar. Si no se abrió, escríbanos al " +
-          TELEFONO + ".";
+        status.textContent = t("ui-form-status",
+          "Abrimos WhatsApp con su consulta lista para enviar. Si no se abrió, escríbanos al {tel}."
+        ).replace("{tel}", TELEFONO);
       }
     });
   });

@@ -3,45 +3,70 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nosotros · Campamento La Perla</title>
-    <meta name="description" content="Campamento La Perla: tradición y hospitalidad desde 1968 en Chupaca, Junín. Hospedaje campestre, áreas verdes y espacios para retiros y eventos.">
+    <title data-i18n="nosotros-campamento-la-perla">Nosotros · Campamento La Perla</title>
+    <meta data-i18n-content="campamento-la-perla-tradicion-y-hospitalidad" name="description" content="Campamento La Perla: tradición y hospitalidad desde 1968 en Chupaca, Junín. Hospedaje campestre, áreas verdes y espacios para retiros y eventos.">
     <meta name="theme-color" content="#112b14">
     <link rel="canonical" href="https://campamentolaperla.com.pe/nosotros.html">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Campamento La Perla">
-    <meta property="og:title" content="Nosotros · Campamento La Perla">
-    <meta property="og:description" content="Campamento La Perla: tradición y hospitalidad desde 1968 en Chupaca, Junín. Hospedaje campestre, áreas verdes y espacios para retiros y eventos.">
+    <meta data-i18n-content="nosotros-campamento-la-perla" property="og:title" content="Nosotros · Campamento La Perla">
+    <meta data-i18n-content="campamento-la-perla-tradicion-y-hospitalidad" property="og:description" content="Campamento La Perla: tradición y hospitalidad desde 1968 en Chupaca, Junín. Hospedaje campestre, áreas verdes y espacios para retiros y eventos.">
     <meta property="og:image" content="https://campamentolaperla.com.pe/assets/img/hero-home-1.jpg">
-    <meta property="og:locale" content="es_PE">
+    <meta data-i18n-content="es-pe" property="og:locale" content="es_PE">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="favicon-180.png">
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/valden.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter.woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+      /* Idioma guardado: oculta el cuerpo un instante para no mostrar el
+         español antes de traducir. Se revela sí o sí pasados 1,5 s. */
+      (function () {
+        try {
+          var m = location.search.match(/[?&]lang=(es|en|de)/);
+          var l = m ? m[1] : localStorage.getItem("laperla-lang");
+          if (!l) {
+            var n = (navigator.language || "es").toLowerCase();
+            l = n.indexOf("en") === 0 ? "en" : n.indexOf("de") === 0 ? "de" : "es";
+          }
+          if (l !== "es") {
+            document.documentElement.className += " i18n-pending";
+            setTimeout(function () {
+              document.documentElement.classList.remove("i18n-pending");
+            }, 1500);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header site-header--over" id="siteHeader">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+        <a data-i18n-aria="campamento-la-perla-inicio" class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
           <img class="brand__logo" src="assets/img/logo-claro.png"
                alt="Campamento La Perla" width="657" height="205">
         </a>
 
-        <nav class="nav" aria-label="Navegación principal">
-            <div class="nav__item"><a class="nav__link is-active" href="nosotros.html">Nosotros</a></div>
-            <div class="nav__item"><a class="nav__link" href="hospedaje.html">Habitaciones</a></div>
-            <div class="nav__item"><a class="nav__link" href="restaurante.html">Restaurante</a></div>
-            <div class="nav__item"><a class="nav__link" href="eventos.html">Eventos</a></div>
-            <div class="nav__item"><a class="nav__link" href="recreacion.html">Recreación</a></div>
-            <div class="nav__item"><a class="nav__link" href="galeria.html">Galería</a></div>
-            <div class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></div>
+        <nav data-i18n-aria="navegacion-principal" class="nav" aria-label="Navegación principal">
+            <div class="nav__item"><a data-i18n="nosotros" class="nav__link is-active" href="nosotros.html">Nosotros</a></div>
+            <div class="nav__item"><a data-i18n="habitaciones" class="nav__link" href="hospedaje.html">Habitaciones</a></div>
+            <div class="nav__item"><a data-i18n="restaurante" class="nav__link" href="restaurante.html">Restaurante</a></div>
+            <div class="nav__item"><a data-i18n="eventos" class="nav__link" href="eventos.html">Eventos</a></div>
+            <div class="nav__item"><a data-i18n="recreacion" class="nav__link" href="recreacion.html">Recreación</a></div>
+            <div class="nav__item"><a data-i18n="galeria" class="nav__link" href="galeria.html">Galería</a></div>
+            <div class="nav__item"><a data-i18n="contacto" class="nav__link" href="contacto.html">Contacto</a></div>
         </nav>
 
         <div class="site-header__actions">
-          <a class="btn btn--ghost" href="https://wa.link/ji8y45" target="_blank" rel="noopener" aria-label="Reserva aquí — abre WhatsApp">¡Reserva aquí!</a>
-          <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <div class="lang-switch" role="group" data-i18n-aria="ui-idioma" aria-label="Idioma">
+            <button type="button" class="lang-switch__btn is-active" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+            <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+            <button type="button" class="lang-switch__btn" data-lang="de" lang="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+          </div>
+          <a data-i18n="reserva-aqui" data-i18n-aria="reserva-aqui-abre-whatsapp" class="btn btn--ghost" href="https://wa.link/ji8y45" target="_blank" rel="noopener" aria-label="Reserva aquí — abre WhatsApp">¡Reserva aquí!</a>
+          <button data-i18n-aria="abrir-menu" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
             <span></span><span></span><span></span>
           </button>
         </div>
@@ -49,43 +74,43 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-      <nav aria-label="Navegación móvil">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="hospedaje.html">Habitaciones</a>
-          <a href="restaurante.html">Restaurante</a>
-          <a href="eventos.html">Eventos</a>
-          <a href="recreacion.html">Recreación</a>
-          <a href="galeria.html">Galería</a>
-          <a href="contacto.html">Contacto</a>
+      <nav data-i18n-aria="navegacion-movil" aria-label="Navegación móvil">
+          <a data-i18n="nosotros" href="nosotros.html">Nosotros</a>
+          <a data-i18n="habitaciones" href="hospedaje.html">Habitaciones</a>
+          <a data-i18n="restaurante" href="restaurante.html">Restaurante</a>
+          <a data-i18n="eventos" href="eventos.html">Eventos</a>
+          <a data-i18n="recreacion" href="recreacion.html">Recreación</a>
+          <a data-i18n="galeria" href="galeria.html">Galería</a>
+          <a data-i18n="contacto" href="contacto.html">Contacto</a>
       </nav>
       <div class="mobile-menu__foot">
-        Av. La Eternidad 1085, Chupaca 12455<br>
+        <span data-i18n="av-la-eternidad-1085-chupaca-12455">Av. La Eternidad 1085, Chupaca 12455</span><br>
         <a href="tel:+51992746927">992 746 927</a> · <a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a>
       </div>
     </div>
 
     <main>
       <section class="hero hero--compact page-head">
-        <div class="hero__media"><img src="assets/img/hero-nosotros.jpg" alt="Una historia de tradición y hospitalidad desde 1968" fetchpriority="high"></div>
+        <div class="hero__media"><img data-i18n-alt="una-historia-de-tradicion-y-hospitalidad" src="assets/img/hero-nosotros.jpg" alt="Una historia de tradición y hospitalidad desde 1968" fetchpriority="high"></div>
         <div class="container hero__inner text-light" data-reveal>
-          <span class="eyebrow">Nosotros</span>
-          <h1 class="page-head__title">Una historia de tradición y hospitalidad desde 1968</h1>
-          <p class="hero__sub">Un espacio campestre pensado para el descanso familiar, eventos inolvidables y encuentros comunitarios en Chupaca.</p>
-          <p class="breadcrumbs"><a href="index.html">Inicio</a> — <span>Nosotros</span></p>
+          <span data-i18n="nosotros" class="eyebrow">Nosotros</span>
+          <h1 data-i18n="una-historia-de-tradicion-y-hospitalidad" class="page-head__title">Una historia de tradición y hospitalidad desde 1968</h1>
+          <p data-i18n="un-espacio-campestre-pensado-para-el" class="hero__sub">Un espacio campestre pensado para el descanso familiar, eventos inolvidables y encuentros comunitarios en Chupaca.</p>
+          <p class="breadcrumbs"><a data-i18n="inicio" href="index.html">Inicio</a> — <span data-i18n="nosotros">Nosotros</span></p>
         </div>
       </section>
 
       <section class="section">
         <div class="container grid grid--split">
           <div class="media-stack" data-reveal>
-            <div class="media media--wide media-stack__back"><img src="assets/img/nosotros-historia.jpg" alt="Campamento La Perla en sus primeros años" loading="lazy" decoding="async"></div>
-            <div class="media media--square media-stack__front"><img src="assets/img/nosotros-historia-2.jpg" alt="Actividades deportivas en los primeros años" loading="lazy" decoding="async"></div>
+            <div class="media media--wide media-stack__back"><img data-i18n-alt="campamento-la-perla-en-sus-primeros-anos" src="assets/img/nosotros-historia.jpg" alt="Campamento La Perla en sus primeros años" loading="lazy" decoding="async"></div>
+            <div class="media media--square media-stack__front"><img data-i18n-alt="actividades-deportivas-en-los-primeros-anos" src="assets/img/nosotros-historia-2.jpg" alt="Actividades deportivas en los primeros años" loading="lazy" decoding="async"></div>
           </div>
           <div data-reveal>
-            <span class="eyebrow">Nuestra historia</span>
-            <h2>Un sueño nacido en el corazón del Valle del Mantaro</h2>
-            <p class="lead">Desde nuestros orígenes, cuando nuestros fundadores llegaron a esta hermosa tierra, Campamento La Perla fue concebido como un refugio de paz y desconexión.</p>
-            <p>Hoy seguimos manteniendo viva esa misma esencia: brindar hospitalidad, campo abierto y espacios únicos para la familia, colegios y empresas.</p>
+            <span data-i18n="nuestra-historia" class="eyebrow">Nuestra historia</span>
+            <h2 data-i18n="un-sueno-nacido-en-el-corazon-del-valle-del">Un sueño nacido en el corazón del Valle del Mantaro</h2>
+            <p data-i18n="desde-nuestros-origenes-cuando-nuestros" class="lead">Desde nuestros orígenes, cuando nuestros fundadores llegaron a esta hermosa tierra, Campamento La Perla fue concebido como un refugio de paz y desconexión.</p>
+            <p data-i18n="hoy-seguimos-manteniendo-viva-esa-misma">Hoy seguimos manteniendo viva esa misma esencia: brindar hospitalidad, campo abierto y espacios únicos para la familia, colegios y empresas.</p>
           </div>
         </div>
       </section>
@@ -93,24 +118,24 @@
       <section class="section section--crema">
         <div class="container">
           <div class="stack-center section-head" data-reveal>
-            <span class="eyebrow">Lo que nos define</span>
-            <h2>Tres pilares que guían nuestra historia</h2>
+            <span data-i18n="lo-que-nos-define" class="eyebrow">Lo que nos define</span>
+            <h2 data-i18n="tres-pilares-que-guian-nuestra-historia">Tres pilares que guían nuestra historia</h2>
           </div>
           <div class="grid grid--3">
           <div class="feature" data-reveal>
             <span class="feature__num">01</span>
-            <h4>Tradición y hospitalidad</h4>
-            <p>Desde 1968 mantenemos la esencia con la que nacimos: una atención humana, cercana y comprometida con hacer sentir a cada visitante como en su propio hogar.</p>
+            <h4 data-i18n="tradicion-y-hospitalidad">Tradición y hospitalidad</h4>
+            <p data-i18n="desde-1968-mantenemos-la-esencia-con-la-que">Desde 1968 mantenemos la esencia con la que nacimos: una atención humana, cercana y comprometida con hacer sentir a cada visitante como en su propio hogar.</p>
           </div>
           <div class="feature" data-reveal>
             <span class="feature__num">02</span>
-            <h4>Naturaleza y campo abierto</h4>
-            <p>Un entorno natural donde el paisaje se conserva intacto, ofreciendo extensas áreas verdes y aire puro ideales para el descanso, los eventos y la desconexión.</p>
+            <h4 data-i18n="naturaleza-y-campo-abierto">Naturaleza y campo abierto</h4>
+            <p data-i18n="un-entorno-natural-donde-el-paisaje-se">Un entorno natural donde el paisaje se conserva intacto, ofreciendo extensas áreas verdes y aire puro ideales para el descanso, los eventos y la desconexión.</p>
           </div>
           <div class="feature" data-reveal>
             <span class="feature__num">03</span>
-            <h4>Espacios para todo propósito</h4>
-            <p>La infraestructura es versátil para acoger familias, retiros escolares, jornadas corporativas y celebraciones especiales en un ambiente seguro y privado.</p>
+            <h4 data-i18n="espacios-para-todo-proposito">Espacios para todo propósito</h4>
+            <p data-i18n="la-infraestructura-es-versatil-para-acoger">La infraestructura es versátil para acoger familias, retiros escolares, jornadas corporativas y celebraciones especiales en un ambiente seguro y privado.</p>
           </div>
           </div>
         </div>
@@ -118,24 +143,24 @@
 
       <section class="section">
         <div class="container grid grid--split">
-          <div class="media media--wide" data-reveal><img src="assets/img/nosotros-recinto.jpg" alt="Vista general del recinto" loading="lazy" decoding="async"></div>
+          <div class="media media--wide" data-reveal><img data-i18n-alt="vista-general-del-recinto" src="assets/img/nosotros-recinto.jpg" alt="Vista general del recinto" loading="lazy" decoding="async"></div>
           <div data-reveal>
-            <span class="eyebrow">Instalaciones</span>
-            <h2>Qué encontrará dentro del recinto</h2>
+            <span data-i18n="instalaciones" class="eyebrow">Instalaciones</span>
+            <h2 data-i18n="que-encontrara-dentro-del-recinto">Qué encontrará dentro del recinto</h2>
             <ul class="check-list" style="margin-top:26px">
-              <li>Bungalows familiares</li>
-              <li>Habitaciones militares y grupales</li>
-              <li>Restaurante a la carta</li>
-              <li>Salones de convenciones</li>
-              <li>Aulas de capacitación</li>
-              <li>Centro de negocios</li>
-              <li>Cancha de fútbol</li>
-              <li>Cancha de vóley</li>
-              <li>Amplios jardines</li>
-              <li>Zonas de descanso</li>
-              <li>Estacionamiento</li>
+              <li data-i18n="bungalows-familiares">Bungalows familiares</li>
+              <li data-i18n="habitaciones-militares-y-grupales">Habitaciones militares y grupales</li>
+              <li data-i18n="restaurante-a-la-carta">Restaurante a la carta</li>
+              <li data-i18n="salones-de-convenciones">Salones de convenciones</li>
+              <li data-i18n="aulas-de-capacitacion">Aulas de capacitación</li>
+              <li data-i18n="centro-de-negocios">Centro de negocios</li>
+              <li data-i18n="cancha-de-futbol">Cancha de fútbol</li>
+              <li data-i18n="cancha-de-voley">Cancha de vóley</li>
+              <li data-i18n="amplios-jardines">Amplios jardines</li>
+              <li data-i18n="zonas-de-descanso">Zonas de descanso</li>
+              <li data-i18n="estacionamiento">Estacionamiento</li>
             </ul>
-            <p style="margin-top:32px"><a class="btn btn--ghost" href="hospedaje.html">Ver el hospedaje</a></p>
+            <p style="margin-top:32px"><a data-i18n="ver-el-hospedaje" class="btn btn--ghost" href="hospedaje.html">Ver el hospedaje</a></p>
           </div>
         </div>
       </section>
@@ -143,12 +168,12 @@
       <section class="section section--crema">
         <div class="container">
           <div class="stack-center section-head" data-reveal>
-            <span class="eyebrow">Video</span>
-            <h2>Conozca La Perla por dentro</h2>
-            <p class="lead">Un recorrido por los bungalows, los salones y las áreas verdes del recinto.</p>
+            <span data-i18n="video" class="eyebrow">Video</span>
+            <h2 data-i18n="conozca-la-perla-por-dentro">Conozca La Perla por dentro</h2>
+            <p data-i18n="un-recorrido-por-los-bungalows-los-salones-y" class="lead">Un recorrido por los bungalows, los salones y las áreas verdes del recinto.</p>
           </div>
           <div class="video-frame" data-reveal>
-            <iframe src="https://www.youtube.com/embed/HxZ3iOBK44I"
+            <iframe data-i18n-title="campamento-la-perla-en-video" src="https://www.youtube.com/embed/HxZ3iOBK44I"
               title="Campamento La Perla en video" loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -157,12 +182,12 @@
       </section>
 
       <section class="section cta-band">
-        <div class="cta-band__media"><img src="assets/img/cta-final.jpg" alt="Le esperamos en Chupaca" loading="lazy" decoding="async"></div>
+        <div class="cta-band__media"><img data-i18n-alt="le-esperamos-en-chupaca" src="assets/img/cta-final.jpg" alt="Le esperamos en Chupaca" loading="lazy" decoding="async"></div>
         <div class="container stack-center text-light" data-reveal>
-          <span class="eyebrow">Visítenos</span>
-          <h2>Le esperamos en Chupaca</h2>
-          <p class="lead">Consulte disponibilidad para su próxima escapada, retiro o celebración familiar.</p>
-          <p style="margin-top:32px"><a class="btn" href="contacto.html">Consultar disponibilidad y cotizar</a></p>
+          <span data-i18n="visitenos" class="eyebrow">Visítenos</span>
+          <h2 data-i18n="le-esperamos-en-chupaca">Le esperamos en Chupaca</h2>
+          <p data-i18n="consulte-disponibilidad-para-su-proxima" class="lead">Consulte disponibilidad para su próxima escapada, retiro o celebración familiar.</p>
+          <p style="margin-top:32px"><a data-i18n="consultar-disponibilidad-y-cotizar" class="btn" href="contacto.html">Consultar disponibilidad y cotizar</a></p>
         </div>
       </section>
     </main>
@@ -170,11 +195,11 @@
     <footer class="site-footer">
       <div class="container site-footer__grid">
         <div>
-          <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+          <a data-i18n-aria="campamento-la-perla-inicio" class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
           <img class="brand__logo" src="assets/img/logo-claro.png"
                alt="Campamento La Perla" width="657" height="205">
         </a>
-          <p style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
+          <p data-i18n="campamento-hospedaje-campestre-y-centro-de" style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
           <div class="socials" style="margin-top:20px">
             <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
             <a href="https://www.instagram.com/la_perla_campamento/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
@@ -182,50 +207,51 @@
           </div>
         </div>
         <div>
-          <h4>Menú principal</h4>
+          <h4 data-i18n="menu-principal">Menú principal</h4>
           <ul>
-            <li><a href="nosotros.html">Nosotros</a></li><li><a href="hospedaje.html">Habitaciones</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="recreacion.html">Recreación</a></li><li><a href="galeria.html">Galería</a></li><li><a href="contacto.html">Contacto</a></li>
+            <li><a data-i18n="nosotros" href="nosotros.html">Nosotros</a></li><li><a data-i18n="habitaciones" href="hospedaje.html">Habitaciones</a></li><li><a data-i18n="restaurante" href="restaurante.html">Restaurante</a></li><li><a data-i18n="eventos" href="eventos.html">Eventos</a></li><li><a data-i18n="recreacion" href="recreacion.html">Recreación</a></li><li><a data-i18n="galeria" href="galeria.html">Galería</a></li><li><a data-i18n="contacto" href="contacto.html">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h4>Experiencias La Perla</h4>
+          <h4 data-i18n="experiencias-la-perla">Experiencias La Perla</h4>
           <ul>
-            <li><a href="retiros.html">Jornadas y retiros escolares</a></li>
-            <li><a href="eventos.html">Cumpleaños infantiles en el campo</a></li>
-            <li><a href="corporativos.html">Team building y capacitaciones</a></li>
-            <li><a href="recreacion.html">Campamentos y campo abierto</a></li>
-            <li><a href="restaurante.html">Gastronomía tradicional</a></li>
+            <li><a data-i18n="jornadas-y-retiros-escolares" href="retiros.html">Jornadas y retiros escolares</a></li>
+            <li><a data-i18n="cumpleanos-infantiles-en-el-campo" href="eventos.html">Cumpleaños infantiles en el campo</a></li>
+            <li><a data-i18n="team-building-y-capacitaciones" href="corporativos.html">Team building y capacitaciones</a></li>
+            <li><a data-i18n="campamentos-y-campo-abierto" href="recreacion.html">Campamentos y campo abierto</a></li>
+            <li><a data-i18n="gastronomia-tradicional" href="restaurante.html">Gastronomía tradicional</a></li>
           </ul>
         </div>
         <div>
-          <h4>Contacto</h4>
+          <h4 data-i18n="contacto">Contacto</h4>
           <ul>
-            <li>Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
+            <li data-i18n="av-la-eternidad-1085-chupaca-12455-junin">Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
             <li><a href="tel:+51992746927">992 746 927</a></li>
             <li><a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a></li>
           </ul>
         </div>
       </div>
       <div class="container site-footer__bottom">
-        <span>© <span id="year">2026</span> Campamento La Perla. Todos los derechos reservados.</span>
-        <span>Chupaca · Junín · Perú</span>
+        <span>© <span id="year">2026</span> <span data-i18n="campamento-la-perla-todos-los-derechos">Campamento La Perla. Todos los derechos reservados.</span></span>
+        <span data-i18n="chupaca-junin-peru">Chupaca · Junín · Perú</span>
       </div>
     </footer>
 
     <a class="wa-float" href="https://wa.me/51992746927?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span>Conversemos</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span data-i18n="conversemos">Conversemos</span>
     </a>
 
-    <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+    <button data-i18n-aria="volver-arriba" class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
 
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
-      <button class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
-      <button class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
-      <img id="lightboxImg" src="" alt="Imagen ampliada de la galería">
-      <button class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
+    <div data-i18n-aria="visor-de-imagenes" class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+      <button data-i18n-aria="cerrar" class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
+      <button data-i18n-aria="anterior" class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
+      <img data-i18n-alt="imagen-ampliada-de-la-galeria" id="lightboxImg" src="" alt="Imagen ampliada de la galería">
+      <button data-i18n-aria="siguiente" class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
       <p class="lightbox__caption" id="lightboxCaption"></p>
     </div>
 
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

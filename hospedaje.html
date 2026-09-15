@@ -3,45 +3,70 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hospedaje · Campamento La Perla</title>
-    <meta name="description" content="Bungalows familiares, habitaciones matrimoniales, dobles, triples y grupales en Campamento La Perla, Chupaca. Wi-Fi, estacionamiento y áreas verdes incluidos.">
+    <title data-i18n="hospedaje-campamento-la-perla">Hospedaje · Campamento La Perla</title>
+    <meta data-i18n-content="bungalows-familiares-habitaciones" name="description" content="Bungalows familiares, habitaciones matrimoniales, dobles, triples y grupales en Campamento La Perla, Chupaca. Wi-Fi, estacionamiento y áreas verdes incluidos.">
     <meta name="theme-color" content="#112b14">
     <link rel="canonical" href="https://campamentolaperla.com.pe/hospedaje.html">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Campamento La Perla">
-    <meta property="og:title" content="Hospedaje · Campamento La Perla">
-    <meta property="og:description" content="Bungalows familiares, habitaciones matrimoniales, dobles, triples y grupales en Campamento La Perla, Chupaca. Wi-Fi, estacionamiento y áreas verdes incluidos.">
+    <meta data-i18n-content="hospedaje-campamento-la-perla" property="og:title" content="Hospedaje · Campamento La Perla">
+    <meta data-i18n-content="bungalows-familiares-habitaciones" property="og:description" content="Bungalows familiares, habitaciones matrimoniales, dobles, triples y grupales en Campamento La Perla, Chupaca. Wi-Fi, estacionamiento y áreas verdes incluidos.">
     <meta property="og:image" content="https://campamentolaperla.com.pe/assets/img/hero-home-1.jpg">
-    <meta property="og:locale" content="es_PE">
+    <meta data-i18n-content="es-pe" property="og:locale" content="es_PE">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="favicon-180.png">
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/valden.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter.woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+      /* Idioma guardado: oculta el cuerpo un instante para no mostrar el
+         español antes de traducir. Se revela sí o sí pasados 1,5 s. */
+      (function () {
+        try {
+          var m = location.search.match(/[?&]lang=(es|en|de)/);
+          var l = m ? m[1] : localStorage.getItem("laperla-lang");
+          if (!l) {
+            var n = (navigator.language || "es").toLowerCase();
+            l = n.indexOf("en") === 0 ? "en" : n.indexOf("de") === 0 ? "de" : "es";
+          }
+          if (l !== "es") {
+            document.documentElement.className += " i18n-pending";
+            setTimeout(function () {
+              document.documentElement.classList.remove("i18n-pending");
+            }, 1500);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header site-header--over" id="siteHeader">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+        <a data-i18n-aria="campamento-la-perla-inicio" class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
           <img class="brand__logo" src="assets/img/logo-claro.png"
                alt="Campamento La Perla" width="657" height="205">
         </a>
 
-        <nav class="nav" aria-label="Navegación principal">
-            <div class="nav__item"><a class="nav__link" href="nosotros.html">Nosotros</a></div>
-            <div class="nav__item"><a class="nav__link is-active" href="hospedaje.html">Habitaciones</a></div>
-            <div class="nav__item"><a class="nav__link" href="restaurante.html">Restaurante</a></div>
-            <div class="nav__item"><a class="nav__link" href="eventos.html">Eventos</a></div>
-            <div class="nav__item"><a class="nav__link" href="recreacion.html">Recreación</a></div>
-            <div class="nav__item"><a class="nav__link" href="galeria.html">Galería</a></div>
-            <div class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></div>
+        <nav data-i18n-aria="navegacion-principal" class="nav" aria-label="Navegación principal">
+            <div class="nav__item"><a data-i18n="nosotros" class="nav__link" href="nosotros.html">Nosotros</a></div>
+            <div class="nav__item"><a data-i18n="habitaciones" class="nav__link is-active" href="hospedaje.html">Habitaciones</a></div>
+            <div class="nav__item"><a data-i18n="restaurante" class="nav__link" href="restaurante.html">Restaurante</a></div>
+            <div class="nav__item"><a data-i18n="eventos" class="nav__link" href="eventos.html">Eventos</a></div>
+            <div class="nav__item"><a data-i18n="recreacion" class="nav__link" href="recreacion.html">Recreación</a></div>
+            <div class="nav__item"><a data-i18n="galeria" class="nav__link" href="galeria.html">Galería</a></div>
+            <div class="nav__item"><a data-i18n="contacto" class="nav__link" href="contacto.html">Contacto</a></div>
         </nav>
 
         <div class="site-header__actions">
-          <a class="btn btn--ghost" href="https://wa.link/ji8y45" target="_blank" rel="noopener" aria-label="Reserva aquí — abre WhatsApp">¡Reserva aquí!</a>
-          <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <div class="lang-switch" role="group" data-i18n-aria="ui-idioma" aria-label="Idioma">
+            <button type="button" class="lang-switch__btn is-active" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+            <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+            <button type="button" class="lang-switch__btn" data-lang="de" lang="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+          </div>
+          <a data-i18n="reserva-aqui" data-i18n-aria="reserva-aqui-abre-whatsapp" class="btn btn--ghost" href="https://wa.link/ji8y45" target="_blank" rel="noopener" aria-label="Reserva aquí — abre WhatsApp">¡Reserva aquí!</a>
+          <button data-i18n-aria="abrir-menu" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
             <span></span><span></span><span></span>
           </button>
         </div>
@@ -49,70 +74,70 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-      <nav aria-label="Navegación móvil">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="hospedaje.html">Habitaciones</a>
-          <a href="restaurante.html">Restaurante</a>
-          <a href="eventos.html">Eventos</a>
-          <a href="recreacion.html">Recreación</a>
-          <a href="galeria.html">Galería</a>
-          <a href="contacto.html">Contacto</a>
+      <nav data-i18n-aria="navegacion-movil" aria-label="Navegación móvil">
+          <a data-i18n="nosotros" href="nosotros.html">Nosotros</a>
+          <a data-i18n="habitaciones" href="hospedaje.html">Habitaciones</a>
+          <a data-i18n="restaurante" href="restaurante.html">Restaurante</a>
+          <a data-i18n="eventos" href="eventos.html">Eventos</a>
+          <a data-i18n="recreacion" href="recreacion.html">Recreación</a>
+          <a data-i18n="galeria" href="galeria.html">Galería</a>
+          <a data-i18n="contacto" href="contacto.html">Contacto</a>
       </nav>
       <div class="mobile-menu__foot">
-        Av. La Eternidad 1085, Chupaca 12455<br>
+        <span data-i18n="av-la-eternidad-1085-chupaca-12455">Av. La Eternidad 1085, Chupaca 12455</span><br>
         <a href="tel:+51992746927">992 746 927</a> · <a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a>
       </div>
     </div>
 
     <main>
       <section class="hero hero--compact page-head">
-        <div class="hero__media"><img src="assets/img/hero-hospedaje.jpg" alt="Un descanso cómodo en medio de la naturaleza" fetchpriority="high"></div>
+        <div class="hero__media"><img data-i18n-alt="un-descanso-comodo-en-medio-de-la-naturaleza" src="assets/img/hero-hospedaje.jpg" alt="Un descanso cómodo en medio de la naturaleza" fetchpriority="high"></div>
         <div class="container hero__inner text-light" data-reveal>
-          <span class="eyebrow">Alojamiento</span>
-          <h1 class="page-head__title">Un descanso cómodo en medio de la naturaleza</h1>
-          <p class="hero__sub">Bungalows familiares, habitaciones individuales, dobles, triples, matrimoniales y áreas grupales. Todas con baño privado, agua caliente y Wi-Fi gratuito.</p>
-          <p class="breadcrumbs"><a href="index.html">Inicio</a> — <span>Hospedaje</span></p>
+          <span data-i18n="alojamiento" class="eyebrow">Alojamiento</span>
+          <h1 data-i18n="un-descanso-comodo-en-medio-de-la-naturaleza" class="page-head__title">Un descanso cómodo en medio de la naturaleza</h1>
+          <p data-i18n="bungalows-familiares-habitaciones-2" class="hero__sub">Bungalows familiares, habitaciones individuales, dobles, triples, matrimoniales y áreas grupales. Todas con baño privado, agua caliente y Wi-Fi gratuito.</p>
+          <p class="breadcrumbs"><a data-i18n="inicio" href="index.html">Inicio</a> — <span data-i18n="hospedaje">Hospedaje</span></p>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">Tipos de alojamiento</span>
-            <h2>Elija cómo quiere descansar</h2>
-            <p>Las tarifas varían según temporada y número de noches. Escríbanos y le confirmamos disponibilidad el mismo día.</p>
+            <span data-i18n="tipos-de-alojamiento" class="eyebrow">Tipos de alojamiento</span>
+            <h2 data-i18n="elija-como-quiere-descansar">Elija cómo quiere descansar</h2>
+            <p data-i18n="las-tarifas-varian-segun-temporada-y-numero">Las tarifas varían según temporada y número de noches. Escríbanos y le confirmamos disponibilidad el mismo día.</p>
           </div>
           <div class="grid grid--2">
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/hab-bungalow.jpg" alt="Bungalows familiares" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="bungalows-familiares" src="assets/img/hab-bungalow.jpg" alt="Bungalows familiares" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">Familias • Amplios • Zonas verdes</p>
-              <h3 class="card__title">Bungalows familiares</h3>
-              <p>Ambientes independientes y acogedores diseñados para la comodidad de toda la familia, rodeados de naturaleza.</p>
+              <p data-i18n="familias-amplios-zonas-verdes" class="card__meta">Familias • Amplios • Zonas verdes</p>
+              <h3 data-i18n="bungalows-familiares" class="card__title">Bungalows familiares</h3>
+              <p data-i18n="ambientes-independientes-y-acogedores">Ambientes independientes y acogedores diseñados para la comodidad de toda la familia, rodeados de naturaleza.</p>
             </div>
           </div>
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/hab-matrimonial.jpg" alt="Habitaciones matrimoniales y dobles" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="habitaciones-matrimoniales-y-dobles" src="assets/img/hab-matrimonial.jpg" alt="Habitaciones matrimoniales y dobles" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">2 personas • Cama matrimonial o 2 camas</p>
-              <h3 class="card__title">Habitaciones matrimoniales y dobles</h3>
-              <p>La opción ideal para parejas o viajes en dupla. Espacios silenciosos, confortables y con vista a los jardines.</p>
+              <p data-i18n="2-personas-cama-matrimonial-o-2-camas" class="card__meta">2 personas • Cama matrimonial o 2 camas</p>
+              <h3 data-i18n="habitaciones-matrimoniales-y-dobles" class="card__title">Habitaciones matrimoniales y dobles</h3>
+              <p data-i18n="la-opcion-ideal-para-parejas-o-viajes-en">La opción ideal para parejas o viajes en dupla. Espacios silenciosos, confortables y con vista a los jardines.</p>
             </div>
           </div>
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/hab-simple.jpg" alt="Habitaciones simples y triples" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="habitaciones-simples-y-triples" src="assets/img/hab-simple.jpg" alt="Habitaciones simples y triples" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">1 a 3 personas • Baño privado</p>
-              <h3 class="card__title">Habitaciones simples y triples</h3>
-              <p>Cómodas y funcionales. Ideales para estancias individuales, trabajo o pequeños grupos que buscan confort y practicidad.</p>
+              <p data-i18n="1-a-3-personas-bano-privado" class="card__meta">1 a 3 personas • Baño privado</p>
+              <h3 data-i18n="habitaciones-simples-y-triples" class="card__title">Habitaciones simples y triples</h3>
+              <p data-i18n="comodas-y-funcionales-ideales-para-estancias">Cómodas y funcionales. Ideales para estancias individuales, trabajo o pequeños grupos que buscan confort y practicidad.</p>
             </div>
           </div>
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/hab-grupal.jpg" alt="Habitaciones militares / grupales" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="habitaciones-militares-grupales" src="assets/img/hab-grupal.jpg" alt="Habitaciones militares / grupales" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">Delegaciones • Grupos • Retiros</p>
-              <h3 class="card__title">Habitaciones militares / grupales</h3>
-              <p>Espacios integrados de gran capacidad, perfectamente acondicionados para estudiantes, delegaciones y grupos de retiros escolares o corporativos.</p>
+              <p data-i18n="delegaciones-grupos-retiros" class="card__meta">Delegaciones • Grupos • Retiros</p>
+              <h3 data-i18n="habitaciones-militares-grupales" class="card__title">Habitaciones militares / grupales</h3>
+              <p data-i18n="espacios-integrados-de-gran-capacidad">Espacios integrados de gran capacidad, perfectamente acondicionados para estudiantes, delegaciones y grupos de retiros escolares o corporativos.</p>
             </div>
           </div>
           </div>
@@ -122,60 +147,60 @@
       <section class="section section--crema">
         <div class="container grid grid--split">
           <div data-reveal>
-            <span class="eyebrow">Incluido siempre</span>
-            <h2>Lo que viene con cada reserva</h2>
-            <p class="lead">Sin cargos ocultos ni extras sorpresa. Todo huésped tiene acceso libre a las instalaciones del recinto.</p>
+            <span data-i18n="incluido-siempre" class="eyebrow">Incluido siempre</span>
+            <h2 data-i18n="lo-que-viene-con-cada-reserva">Lo que viene con cada reserva</h2>
+            <p data-i18n="sin-cargos-ocultos-ni-extras-sorpresa-todo" class="lead">Sin cargos ocultos ni extras sorpresa. Todo huésped tiene acceso libre a las instalaciones del recinto.</p>
             <ul class="check-list" style="margin-top:26px">
-              <li>Wi-Fi gratuito en instalaciones</li>
-              <li>Estacionamiento privado gratuito</li>
-              <li>Agua caliente 24 horas</li>
-              <li>Canchas deportivas de fútbol y vóley</li>
-              <li>Amplios jardines y áreas verdes</li>
-              <li>Somos Pet Friendly</li>
+              <li data-i18n="wi-fi-gratuito-en-instalaciones">Wi-Fi gratuito en instalaciones</li>
+              <li data-i18n="estacionamiento-privado-gratuito">Estacionamiento privado gratuito</li>
+              <li data-i18n="agua-caliente-24-horas">Agua caliente 24 horas</li>
+              <li data-i18n="canchas-deportivas-de-futbol-y-voley">Canchas deportivas de fútbol y vóley</li>
+              <li data-i18n="amplios-jardines-y-areas-verdes">Amplios jardines y áreas verdes</li>
+              <li data-i18n="somos-pet-friendly">Somos Pet Friendly</li>
             </ul>
           </div>
-          <div class="media media--wide" data-reveal><img src="assets/img/hab-interior-1.jpg" alt="Interior de un bungalow" loading="lazy" decoding="async"></div>
+          <div class="media media--wide" data-reveal><img data-i18n-alt="interior-de-un-bungalow" src="assets/img/hab-interior-1.jpg" alt="Interior de un bungalow" loading="lazy" decoding="async"></div>
         </div>
       </section>
 
       <section class="section">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">Información importante</span>
-            <h2>Horarios y políticas</h2>
+            <span data-i18n="informacion-importante" class="eyebrow">Información importante</span>
+            <h2 data-i18n="horarios-y-politicas">Horarios y políticas</h2>
           </div>
           <div class="grid grid--3">
           <div class="feature" data-reveal>
             
-            <h4>Check-in</h4>
-            <p>Desde las 14:00 h. Llegadas tardías previa coordinación.</p>
+            <h4 data-i18n="check-in">Check-in</h4>
+            <p data-i18n="desde-las-14-00-h-llegadas-tardias-previa">Desde las 14:00 h. Llegadas tardías previa coordinación.</p>
           </div>
           <div class="feature" data-reveal>
             
-            <h4>Check-out</h4>
-            <p>Hasta las 12:00 h. Consulte por salidas tardías según disponibilidad.</p>
+            <h4 data-i18n="check-out">Check-out</h4>
+            <p data-i18n="hasta-las-12-00-h-consulte-por-salidas">Hasta las 12:00 h. Consulte por salidas tardías según disponibilidad.</p>
           </div>
           <div class="feature" data-reveal>
             
-            <h4>Somos Pet Friendly</h4>
-            <p>Tus mascotas son bienvenidas en nuestro recinto. Por favor, avísanos al momento de realizar tu reserva.</p>
+            <h4 data-i18n="somos-pet-friendly">Somos Pet Friendly</h4>
+            <p data-i18n="tus-mascotas-son-bienvenidas-en-nuestro">Tus mascotas son bienvenidas en nuestro recinto. Por favor, avísanos al momento de realizar tu reserva.</p>
           </div>
           </div>
           <div class="gallery" style="margin-top:56px" data-gallery>
-            <figure class="gallery__item g-4" data-caption="Sala de estar del bungalow"><img src="assets/img/hab-interior-2.jpg" alt="Sala de estar del bungalow" loading="lazy" decoding="async"></figure>
-            <figure class="gallery__item g-4" data-caption="Espacio grupal"><img src="assets/img/hab-grupal.jpg" alt="Espacio grupal" loading="lazy" decoding="async"></figure>
-            <figure class="gallery__item g-4" data-caption="Comedor interior"><img src="assets/img/hab-interior-3.jpg" alt="Comedor interior" loading="lazy" decoding="async"></figure>
+            <figure data-i18n-caption="sala-de-estar-del-bungalow" class="gallery__item g-4" data-caption="Sala de estar del bungalow"><img data-i18n-alt="sala-de-estar-del-bungalow" src="assets/img/hab-interior-2.jpg" alt="Sala de estar del bungalow" loading="lazy" decoding="async"></figure>
+            <figure data-i18n-caption="espacio-grupal" class="gallery__item g-4" data-caption="Espacio grupal"><img data-i18n-alt="espacio-grupal" src="assets/img/hab-grupal.jpg" alt="Espacio grupal" loading="lazy" decoding="async"></figure>
+            <figure data-i18n-caption="comedor-interior" class="gallery__item g-4" data-caption="Comedor interior"><img data-i18n-alt="comedor-interior" src="assets/img/hab-interior-3.jpg" alt="Comedor interior" loading="lazy" decoding="async"></figure>
           </div>
         </div>
       </section>
 
       <section class="section cta-band">
-        <div class="cta-band__media"><img src="assets/img/cta-reserva.jpg" alt="Consulte disponibilidad" loading="lazy" decoding="async"></div>
+        <div class="cta-band__media"><img data-i18n-alt="consulte-disponibilidad" src="assets/img/cta-reserva.jpg" alt="Consulte disponibilidad" loading="lazy" decoding="async"></div>
         <div class="container stack-center text-light" data-reveal>
-          <span class="eyebrow">Reservas</span>
-          <h2>Consulte disponibilidad</h2>
-          <p class="lead">Indíquenos fechas y número de personas y le respondemos con tarifas y opciones disponibles.</p>
-          <p style="margin-top:32px"><a class="btn" href="contacto.html">Consultar disponibilidad y cotizar</a></p>
+          <span data-i18n="reservas" class="eyebrow">Reservas</span>
+          <h2 data-i18n="consulte-disponibilidad">Consulte disponibilidad</h2>
+          <p data-i18n="indiquenos-fechas-y-numero-de-personas-y-le" class="lead">Indíquenos fechas y número de personas y le respondemos con tarifas y opciones disponibles.</p>
+          <p style="margin-top:32px"><a data-i18n="consultar-disponibilidad-y-cotizar" class="btn" href="contacto.html">Consultar disponibilidad y cotizar</a></p>
         </div>
       </section>
     </main>
@@ -183,11 +208,11 @@
     <footer class="site-footer">
       <div class="container site-footer__grid">
         <div>
-          <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+          <a data-i18n-aria="campamento-la-perla-inicio" class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
           <img class="brand__logo" src="assets/img/logo-claro.png"
                alt="Campamento La Perla" width="657" height="205">
         </a>
-          <p style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
+          <p data-i18n="campamento-hospedaje-campestre-y-centro-de" style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
           <div class="socials" style="margin-top:20px">
             <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
             <a href="https://www.instagram.com/la_perla_campamento/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
@@ -195,50 +220,51 @@
           </div>
         </div>
         <div>
-          <h4>Menú principal</h4>
+          <h4 data-i18n="menu-principal">Menú principal</h4>
           <ul>
-            <li><a href="nosotros.html">Nosotros</a></li><li><a href="hospedaje.html">Habitaciones</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="recreacion.html">Recreación</a></li><li><a href="galeria.html">Galería</a></li><li><a href="contacto.html">Contacto</a></li>
+            <li><a data-i18n="nosotros" href="nosotros.html">Nosotros</a></li><li><a data-i18n="habitaciones" href="hospedaje.html">Habitaciones</a></li><li><a data-i18n="restaurante" href="restaurante.html">Restaurante</a></li><li><a data-i18n="eventos" href="eventos.html">Eventos</a></li><li><a data-i18n="recreacion" href="recreacion.html">Recreación</a></li><li><a data-i18n="galeria" href="galeria.html">Galería</a></li><li><a data-i18n="contacto" href="contacto.html">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h4>Experiencias La Perla</h4>
+          <h4 data-i18n="experiencias-la-perla">Experiencias La Perla</h4>
           <ul>
-            <li><a href="retiros.html">Jornadas y retiros escolares</a></li>
-            <li><a href="eventos.html">Cumpleaños infantiles en el campo</a></li>
-            <li><a href="corporativos.html">Team building y capacitaciones</a></li>
-            <li><a href="recreacion.html">Campamentos y campo abierto</a></li>
-            <li><a href="restaurante.html">Gastronomía tradicional</a></li>
+            <li><a data-i18n="jornadas-y-retiros-escolares" href="retiros.html">Jornadas y retiros escolares</a></li>
+            <li><a data-i18n="cumpleanos-infantiles-en-el-campo" href="eventos.html">Cumpleaños infantiles en el campo</a></li>
+            <li><a data-i18n="team-building-y-capacitaciones" href="corporativos.html">Team building y capacitaciones</a></li>
+            <li><a data-i18n="campamentos-y-campo-abierto" href="recreacion.html">Campamentos y campo abierto</a></li>
+            <li><a data-i18n="gastronomia-tradicional" href="restaurante.html">Gastronomía tradicional</a></li>
           </ul>
         </div>
         <div>
-          <h4>Contacto</h4>
+          <h4 data-i18n="contacto">Contacto</h4>
           <ul>
-            <li>Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
+            <li data-i18n="av-la-eternidad-1085-chupaca-12455-junin">Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
             <li><a href="tel:+51992746927">992 746 927</a></li>
             <li><a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a></li>
           </ul>
         </div>
       </div>
       <div class="container site-footer__bottom">
-        <span>© <span id="year">2026</span> Campamento La Perla. Todos los derechos reservados.</span>
-        <span>Chupaca · Junín · Perú</span>
+        <span>© <span id="year">2026</span> <span data-i18n="campamento-la-perla-todos-los-derechos">Campamento La Perla. Todos los derechos reservados.</span></span>
+        <span data-i18n="chupaca-junin-peru">Chupaca · Junín · Perú</span>
       </div>
     </footer>
 
     <a class="wa-float" href="https://wa.me/51992746927?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span>Conversemos</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span data-i18n="conversemos">Conversemos</span>
     </a>
 
-    <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+    <button data-i18n-aria="volver-arriba" class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
 
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
-      <button class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
-      <button class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
-      <img id="lightboxImg" src="" alt="Imagen ampliada de la galería">
-      <button class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
+    <div data-i18n-aria="visor-de-imagenes" class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+      <button data-i18n-aria="cerrar" class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
+      <button data-i18n-aria="anterior" class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
+      <img data-i18n-alt="imagen-ampliada-de-la-galeria" id="lightboxImg" src="" alt="Imagen ampliada de la galería">
+      <button data-i18n-aria="siguiente" class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
       <p class="lightbox__caption" id="lightboxCaption"></p>
     </div>
 
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

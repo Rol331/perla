@@ -3,45 +3,70 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Retiros y jornadas · Campamento La Perla</title>
-    <meta name="description" content="Retiros escolares y jornadas espirituales en Campamento La Perla, Chupaca: capilla, auditorio, aulas, campo abierto y hospedaje grupal para delegaciones.">
+    <title data-i18n="retiros-y-jornadas-campamento-la-perla">Retiros y jornadas · Campamento La Perla</title>
+    <meta data-i18n-content="retiros-escolares-y-jornadas-espirituales-en" name="description" content="Retiros escolares y jornadas espirituales en Campamento La Perla, Chupaca: capilla, auditorio, aulas, campo abierto y hospedaje grupal para delegaciones.">
     <meta name="theme-color" content="#112b14">
     <link rel="canonical" href="https://campamentolaperla.com.pe/retiros.html">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Campamento La Perla">
-    <meta property="og:title" content="Retiros y jornadas · Campamento La Perla">
-    <meta property="og:description" content="Retiros escolares y jornadas espirituales en Campamento La Perla, Chupaca: capilla, auditorio, aulas, campo abierto y hospedaje grupal para delegaciones.">
+    <meta data-i18n-content="retiros-y-jornadas-campamento-la-perla" property="og:title" content="Retiros y jornadas · Campamento La Perla">
+    <meta data-i18n-content="retiros-escolares-y-jornadas-espirituales-en" property="og:description" content="Retiros escolares y jornadas espirituales en Campamento La Perla, Chupaca: capilla, auditorio, aulas, campo abierto y hospedaje grupal para delegaciones.">
     <meta property="og:image" content="https://campamentolaperla.com.pe/assets/img/hero-home-1.jpg">
-    <meta property="og:locale" content="es_PE">
+    <meta data-i18n-content="es-pe" property="og:locale" content="es_PE">
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="apple-touch-icon" href="favicon-180.png">
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/valden.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter.woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+      /* Idioma guardado: oculta el cuerpo un instante para no mostrar el
+         español antes de traducir. Se revela sí o sí pasados 1,5 s. */
+      (function () {
+        try {
+          var m = location.search.match(/[?&]lang=(es|en|de)/);
+          var l = m ? m[1] : localStorage.getItem("laperla-lang");
+          if (!l) {
+            var n = (navigator.language || "es").toLowerCase();
+            l = n.indexOf("en") === 0 ? "en" : n.indexOf("de") === 0 ? "de" : "es";
+          }
+          if (l !== "es") {
+            document.documentElement.className += " i18n-pending";
+            setTimeout(function () {
+              document.documentElement.classList.remove("i18n-pending");
+            }, 1500);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header site-header--over" id="siteHeader">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+        <a data-i18n-aria="campamento-la-perla-inicio" class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
           <img class="brand__logo" src="assets/img/logo-claro.png"
                alt="Campamento La Perla" width="657" height="205">
         </a>
 
-        <nav class="nav" aria-label="Navegación principal">
-            <div class="nav__item"><a class="nav__link" href="nosotros.html">Nosotros</a></div>
-            <div class="nav__item"><a class="nav__link" href="hospedaje.html">Habitaciones</a></div>
-            <div class="nav__item"><a class="nav__link" href="restaurante.html">Restaurante</a></div>
-            <div class="nav__item"><a class="nav__link" href="eventos.html">Eventos</a></div>
-            <div class="nav__item"><a class="nav__link" href="recreacion.html">Recreación</a></div>
-            <div class="nav__item"><a class="nav__link" href="galeria.html">Galería</a></div>
-            <div class="nav__item"><a class="nav__link" href="contacto.html">Contacto</a></div>
+        <nav data-i18n-aria="navegacion-principal" class="nav" aria-label="Navegación principal">
+            <div class="nav__item"><a data-i18n="nosotros" class="nav__link" href="nosotros.html">Nosotros</a></div>
+            <div class="nav__item"><a data-i18n="habitaciones" class="nav__link" href="hospedaje.html">Habitaciones</a></div>
+            <div class="nav__item"><a data-i18n="restaurante" class="nav__link" href="restaurante.html">Restaurante</a></div>
+            <div class="nav__item"><a data-i18n="eventos" class="nav__link" href="eventos.html">Eventos</a></div>
+            <div class="nav__item"><a data-i18n="recreacion" class="nav__link" href="recreacion.html">Recreación</a></div>
+            <div class="nav__item"><a data-i18n="galeria" class="nav__link" href="galeria.html">Galería</a></div>
+            <div class="nav__item"><a data-i18n="contacto" class="nav__link" href="contacto.html">Contacto</a></div>
         </nav>
 
         <div class="site-header__actions">
-          <a class="btn btn--ghost" href="https://wa.link/ji8y45" target="_blank" rel="noopener" aria-label="Reserva aquí — abre WhatsApp">¡Reserva aquí!</a>
-          <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <div class="lang-switch" role="group" data-i18n-aria="ui-idioma" aria-label="Idioma">
+            <button type="button" class="lang-switch__btn is-active" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+            <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+            <button type="button" class="lang-switch__btn" data-lang="de" lang="de" aria-pressed="false" aria-label="Deutsch">DE</button>
+          </div>
+          <a data-i18n="reserva-aqui" data-i18n-aria="reserva-aqui-abre-whatsapp" class="btn btn--ghost" href="https://wa.link/ji8y45" target="_blank" rel="noopener" aria-label="Reserva aquí — abre WhatsApp">¡Reserva aquí!</a>
+          <button data-i18n-aria="abrir-menu" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
             <span></span><span></span><span></span>
           </button>
         </div>
@@ -49,72 +74,72 @@
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-      <nav aria-label="Navegación móvil">
-          <a href="nosotros.html">Nosotros</a>
-          <a href="hospedaje.html">Habitaciones</a>
-          <a href="restaurante.html">Restaurante</a>
-          <a href="eventos.html">Eventos</a>
-          <a href="recreacion.html">Recreación</a>
-          <a href="galeria.html">Galería</a>
-          <a href="contacto.html">Contacto</a>
+      <nav data-i18n-aria="navegacion-movil" aria-label="Navegación móvil">
+          <a data-i18n="nosotros" href="nosotros.html">Nosotros</a>
+          <a data-i18n="habitaciones" href="hospedaje.html">Habitaciones</a>
+          <a data-i18n="restaurante" href="restaurante.html">Restaurante</a>
+          <a data-i18n="eventos" href="eventos.html">Eventos</a>
+          <a data-i18n="recreacion" href="recreacion.html">Recreación</a>
+          <a data-i18n="galeria" href="galeria.html">Galería</a>
+          <a data-i18n="contacto" href="contacto.html">Contacto</a>
       </nav>
       <div class="mobile-menu__foot">
-        Av. La Eternidad 1085, Chupaca 12455<br>
+        <span data-i18n="av-la-eternidad-1085-chupaca-12455">Av. La Eternidad 1085, Chupaca 12455</span><br>
         <a href="tel:+51992746927">992 746 927</a> · <a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a>
       </div>
     </div>
 
     <main>
       <section class="hero hero--compact page-head">
-        <div class="hero__media"><img src="assets/img/hero-retiros.jpg" alt="Un espacio de recogimiento en pleno campo" fetchpriority="high"></div>
+        <div class="hero__media"><img data-i18n-alt="un-espacio-de-recogimiento-en-pleno-campo" src="assets/img/hero-retiros.jpg" alt="Un espacio de recogimiento en pleno campo" fetchpriority="high"></div>
         <div class="container hero__inner text-light" data-reveal>
-          <span class="eyebrow">Retiros y jornadas</span>
-          <h1 class="page-head__title">Un espacio de recogimiento en pleno campo</h1>
-          <p class="hero__sub">Jornadas espirituales, retiros escolares y actividades pedagógicas con capilla, aulas, campo abierto y hospedaje para todo el grupo.</p>
-          <p class="breadcrumbs"><a href="index.html">Inicio</a> — <span>Retiros</span></p>
+          <span data-i18n="retiros-y-jornadas" class="eyebrow">Retiros y jornadas</span>
+          <h1 data-i18n="un-espacio-de-recogimiento-en-pleno-campo" class="page-head__title">Un espacio de recogimiento en pleno campo</h1>
+          <p data-i18n="jornadas-espirituales-retiros-escolares-y" class="hero__sub">Jornadas espirituales, retiros escolares y actividades pedagógicas con capilla, aulas, campo abierto y hospedaje para todo el grupo.</p>
+          <p class="breadcrumbs"><a data-i18n="inicio" href="index.html">Inicio</a> — <span data-i18n="retiros">Retiros</span></p>
         </div>
       </section>
 
       <section class="section">
         <div class="container grid grid--split">
           <div data-reveal>
-            <span class="eyebrow">Por qué elegirnos</span>
-            <h2>Todo el grupo en un mismo recinto</h2>
-            <p class="lead">Espacios al aire libre y logística adaptada para jornadas espirituales, retiros de integración y actividades pedagógicas para colegios.</p>
-            <p>Contamos con auditorio y capilla para las celebraciones, aulas dedicadas a talleres, amplias áreas verdes para las dinámicas grupales y habitaciones militares y grupales que permiten alojar delegaciones completas sin dispersarlas.</p>
-            <p>Nuestra cocina se encarga del coffee break, los almuerzos y los banquetes, de modo que los organizadores solo se ocupan del programa.</p>
-            <p style="margin-top:30px"><a class="btn" href="contacto.html">Solicitar cotización</a></p>
+            <span data-i18n="por-que-elegirnos" class="eyebrow">Por qué elegirnos</span>
+            <h2 data-i18n="todo-el-grupo-en-un-mismo-recinto">Todo el grupo en un mismo recinto</h2>
+            <p data-i18n="espacios-al-aire-libre-y-logistica-adaptada" class="lead">Espacios al aire libre y logística adaptada para jornadas espirituales, retiros de integración y actividades pedagógicas para colegios.</p>
+            <p data-i18n="contamos-con-auditorio-y-capilla-para-las">Contamos con auditorio y capilla para las celebraciones, aulas dedicadas a talleres, amplias áreas verdes para las dinámicas grupales y habitaciones militares y grupales que permiten alojar delegaciones completas sin dispersarlas.</p>
+            <p data-i18n="nuestra-cocina-se-encarga-del-coffee-break">Nuestra cocina se encarga del coffee break, los almuerzos y los banquetes, de modo que los organizadores solo se ocupan del programa.</p>
+            <p style="margin-top:30px"><a data-i18n="solicitar-cotizacion" class="btn" href="contacto.html">Solicitar cotización</a></p>
           </div>
-          <div class="media media--tall" data-reveal><img src="assets/img/retiros-capilla.jpg" alt="Capilla del campamento" loading="lazy" decoding="async"></div>
+          <div class="media media--tall" data-reveal><img data-i18n-alt="capilla-del-campamento" src="assets/img/retiros-capilla.jpg" alt="Capilla del campamento" loading="lazy" decoding="async"></div>
         </div>
       </section>
 
       <section class="section section--crema">
         <div class="container">
           <div class="stack-center section-head" data-reveal>
-            <span class="eyebrow">Formatos</span>
-            <h2>Qué tipo de jornadas recibimos</h2>
+            <span data-i18n="formatos" class="eyebrow">Formatos</span>
+            <h2 data-i18n="que-tipo-de-jornadas-recibimos">Qué tipo de jornadas recibimos</h2>
           </div>
           <div class="grid grid--4">
           <div class="feature" data-reveal>
             <span class="feature__num">01</span>
-            <h4>Jornadas espirituales</h4>
-            <p>Espacios de silencio y recogimiento, con capilla y auditorio disponibles para las celebraciones y los momentos de oración.</p>
+            <h4 data-i18n="jornadas-espirituales">Jornadas espirituales</h4>
+            <p data-i18n="espacios-de-silencio-y-recogimiento-con">Espacios de silencio y recogimiento, con capilla y auditorio disponibles para las celebraciones y los momentos de oración.</p>
           </div>
           <div class="feature" data-reveal>
             <span class="feature__num">02</span>
-            <h4>Retiros escolares</h4>
-            <p>Programas de integración para colegios, con aulas, campo abierto y alojamiento grupal para toda la delegación.</p>
+            <h4 data-i18n="retiros-escolares">Retiros escolares</h4>
+            <p data-i18n="programas-de-integracion-para-colegios-con">Programas de integración para colegios, con aulas, campo abierto y alojamiento grupal para toda la delegación.</p>
           </div>
           <div class="feature" data-reveal>
             <span class="feature__num">03</span>
-            <h4>Actividades pedagógicas</h4>
-            <p>Salidas de estudio y talleres al aire libre, con la logística de comidas y transporte interno resuelta.</p>
+            <h4 data-i18n="actividades-pedagogicas">Actividades pedagógicas</h4>
+            <p data-i18n="salidas-de-estudio-y-talleres-al-aire-libre">Salidas de estudio y talleres al aire libre, con la logística de comidas y transporte interno resuelta.</p>
           </div>
           <div class="feature" data-reveal>
             <span class="feature__num">04</span>
-            <h4>Retiros de integración</h4>
-            <p>Jornadas de convivencia para grupos parroquiales, scouts y organizaciones comunitarias.</p>
+            <h4 data-i18n="retiros-de-integracion">Retiros de integración</h4>
+            <p data-i18n="jornadas-de-convivencia-para-grupos">Jornadas de convivencia para grupos parroquiales, scouts y organizaciones comunitarias.</p>
           </div>
           </div>
         </div>
@@ -123,32 +148,32 @@
       <section class="section">
         <div class="container">
           <div class="section-head" data-reveal>
-            <span class="eyebrow">Espacios</span>
-            <h2>Los ambientes para su jornada</h2>
+            <span data-i18n="espacios" class="eyebrow">Espacios</span>
+            <h2 data-i18n="los-ambientes-para-su-jornada">Los ambientes para su jornada</h2>
           </div>
           <div class="grid grid--3">
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/retiros-auditorio.jpg" alt="Auditorio" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="auditorio" src="assets/img/retiros-auditorio.jpg" alt="Auditorio" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">Interior</p>
-              <h3 class="card__title">Auditorio</h3>
-              <p>Espacio amplio con capacidad para toda la delegación, ideal para charlas, celebraciones y plenarias.</p>
+              <p data-i18n="interior" class="card__meta">Interior</p>
+              <h3 data-i18n="auditorio" class="card__title">Auditorio</h3>
+              <p data-i18n="espacio-amplio-con-capacidad-para-toda-la">Espacio amplio con capacidad para toda la delegación, ideal para charlas, celebraciones y plenarias.</p>
             </div>
           </div>
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/retiros-cruz.jpg" alt="Capilla" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="capilla" src="assets/img/retiros-cruz.jpg" alt="Capilla" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">Interior</p>
-              <h3 class="card__title">Capilla</h3>
-              <p>Ambiente de recogimiento para las celebraciones religiosas y los momentos de oración del grupo.</p>
+              <p data-i18n="interior" class="card__meta">Interior</p>
+              <h3 data-i18n="capilla" class="card__title">Capilla</h3>
+              <p data-i18n="ambiente-de-recogimiento-para-las">Ambiente de recogimiento para las celebraciones religiosas y los momentos de oración del grupo.</p>
             </div>
           </div>
           <div class="card" data-reveal>
-            <div class="media media--wide"><img src="assets/img/retiros-campo.jpg" alt="Campo abierto" loading="lazy" decoding="async"></div>
+            <div class="media media--wide"><img data-i18n-alt="campo-abierto" src="assets/img/retiros-campo.jpg" alt="Campo abierto" loading="lazy" decoding="async"></div>
             <div class="card__body">
-              <p class="card__meta">Aire libre</p>
-              <h3 class="card__title">Campo abierto</h3>
-              <p>Extensas áreas verdes para las dinámicas grupales, los juegos y las actividades de integración.</p>
+              <p data-i18n="aire-libre" class="card__meta">Aire libre</p>
+              <h3 data-i18n="campo-abierto" class="card__title">Campo abierto</h3>
+              <p data-i18n="extensas-areas-verdes-para-las-dinamicas">Extensas áreas verdes para las dinámicas grupales, los juegos y las actividades de integración.</p>
             </div>
           </div>
           </div>
@@ -158,29 +183,29 @@
       <section class="section section--verde">
         <div class="container grid grid--split">
           <div data-reveal>
-            <span class="eyebrow">Incluido</span>
-            <h2>Lo que resolvemos por usted</h2>
+            <span data-i18n="incluido" class="eyebrow">Incluido</span>
+            <h2 data-i18n="lo-que-resolvemos-por-usted">Lo que resolvemos por usted</h2>
           </div>
           <div data-reveal>
             <ul class="check-list" style="grid-template-columns:1fr">
-              <li>Auditorio y capilla para las celebraciones</li>
-              <li>Aulas de capacitación para talleres</li>
-              <li>Habitaciones grupales para delegaciones</li>
-              <li>Coffee break, almuerzos y banquetes</li>
-              <li>Campo abierto para dinámicas y juegos</li>
-              <li>Estacionamiento privado para buses</li>
+              <li data-i18n="auditorio-y-capilla-para-las-celebraciones">Auditorio y capilla para las celebraciones</li>
+              <li data-i18n="aulas-de-capacitacion-para-talleres">Aulas de capacitación para talleres</li>
+              <li data-i18n="habitaciones-grupales-para-delegaciones">Habitaciones grupales para delegaciones</li>
+              <li data-i18n="coffee-break-almuerzos-y-banquetes">Coffee break, almuerzos y banquetes</li>
+              <li data-i18n="campo-abierto-para-dinamicas-y-juegos">Campo abierto para dinámicas y juegos</li>
+              <li data-i18n="estacionamiento-privado-para-buses">Estacionamiento privado para buses</li>
             </ul>
           </div>
         </div>
       </section>
 
       <section class="section cta-band">
-        <div class="cta-band__media"><img src="assets/img/cta-eventos.jpg" alt="Cuéntenos sobre su jornada" loading="lazy" decoding="async"></div>
+        <div class="cta-band__media"><img data-i18n-alt="cuentenos-sobre-su-jornada" src="assets/img/cta-eventos.jpg" alt="Cuéntenos sobre su jornada" loading="lazy" decoding="async"></div>
         <div class="container stack-center text-light" data-reveal>
-          <span class="eyebrow">Cotizaciones</span>
-          <h2>Cuéntenos sobre su jornada</h2>
-          <p class="lead">Envíenos fechas, número de participantes y tipo de retiro. Le respondemos con una propuesta a medida.</p>
-          <p style="margin-top:32px"><a class="btn" href="contacto.html">Solicitar cotización</a></p>
+          <span data-i18n="cotizaciones" class="eyebrow">Cotizaciones</span>
+          <h2 data-i18n="cuentenos-sobre-su-jornada">Cuéntenos sobre su jornada</h2>
+          <p data-i18n="envienos-fechas-numero-de-participantes-y" class="lead">Envíenos fechas, número de participantes y tipo de retiro. Le respondemos con una propuesta a medida.</p>
+          <p style="margin-top:32px"><a data-i18n="solicitar-cotizacion" class="btn" href="contacto.html">Solicitar cotización</a></p>
         </div>
       </section>
     </main>
@@ -188,11 +213,11 @@
     <footer class="site-footer">
       <div class="container site-footer__grid">
         <div>
-          <a class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
+          <a data-i18n-aria="campamento-la-perla-inicio" class="brand" href="index.html" aria-label="Campamento La Perla · inicio">
           <img class="brand__logo" src="assets/img/logo-claro.png"
                alt="Campamento La Perla" width="657" height="205">
         </a>
-          <p style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
+          <p data-i18n="campamento-hospedaje-campestre-y-centro-de" style="font-size:14px;max-width:36ch">Campamento, hospedaje campestre y centro de eventos en el Valle del Mantaro. Tu espacio ideal de naturaleza, descanso y desconexión a pocos minutos de Huancayo.</p>
           <div class="socials" style="margin-top:20px">
             <a href="https://www.facebook.com/laperlachupaca" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
             <a href="https://www.instagram.com/la_perla_campamento/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-.9 0-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.8-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c0 .9.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.8.3 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c.9 0 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.8.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c0-.9-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.8-.3-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8a3.1 3.1 0 100-6.2 3.1 3.1 0 000 6.2zm6.2-8.2a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
@@ -200,50 +225,51 @@
           </div>
         </div>
         <div>
-          <h4>Menú principal</h4>
+          <h4 data-i18n="menu-principal">Menú principal</h4>
           <ul>
-            <li><a href="nosotros.html">Nosotros</a></li><li><a href="hospedaje.html">Habitaciones</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="eventos.html">Eventos</a></li><li><a href="recreacion.html">Recreación</a></li><li><a href="galeria.html">Galería</a></li><li><a href="contacto.html">Contacto</a></li>
+            <li><a data-i18n="nosotros" href="nosotros.html">Nosotros</a></li><li><a data-i18n="habitaciones" href="hospedaje.html">Habitaciones</a></li><li><a data-i18n="restaurante" href="restaurante.html">Restaurante</a></li><li><a data-i18n="eventos" href="eventos.html">Eventos</a></li><li><a data-i18n="recreacion" href="recreacion.html">Recreación</a></li><li><a data-i18n="galeria" href="galeria.html">Galería</a></li><li><a data-i18n="contacto" href="contacto.html">Contacto</a></li>
           </ul>
         </div>
         <div>
-          <h4>Experiencias La Perla</h4>
+          <h4 data-i18n="experiencias-la-perla">Experiencias La Perla</h4>
           <ul>
-            <li><a href="retiros.html">Jornadas y retiros escolares</a></li>
-            <li><a href="eventos.html">Cumpleaños infantiles en el campo</a></li>
-            <li><a href="corporativos.html">Team building y capacitaciones</a></li>
-            <li><a href="recreacion.html">Campamentos y campo abierto</a></li>
-            <li><a href="restaurante.html">Gastronomía tradicional</a></li>
+            <li><a data-i18n="jornadas-y-retiros-escolares" href="retiros.html">Jornadas y retiros escolares</a></li>
+            <li><a data-i18n="cumpleanos-infantiles-en-el-campo" href="eventos.html">Cumpleaños infantiles en el campo</a></li>
+            <li><a data-i18n="team-building-y-capacitaciones" href="corporativos.html">Team building y capacitaciones</a></li>
+            <li><a data-i18n="campamentos-y-campo-abierto" href="recreacion.html">Campamentos y campo abierto</a></li>
+            <li><a data-i18n="gastronomia-tradicional" href="restaurante.html">Gastronomía tradicional</a></li>
           </ul>
         </div>
         <div>
-          <h4>Contacto</h4>
+          <h4 data-i18n="contacto">Contacto</h4>
           <ul>
-            <li>Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
+            <li data-i18n="av-la-eternidad-1085-chupaca-12455-junin">Av. La Eternidad 1085, Chupaca 12455<br>Junín, Perú</li>
             <li><a href="tel:+51992746927">992 746 927</a></li>
             <li><a href="mailto:campamentolaperla@gmail.com">campamentolaperla@gmail.com</a></li>
           </ul>
         </div>
       </div>
       <div class="container site-footer__bottom">
-        <span>© <span id="year">2026</span> Campamento La Perla. Todos los derechos reservados.</span>
-        <span>Chupaca · Junín · Perú</span>
+        <span>© <span id="year">2026</span> <span data-i18n="campamento-la-perla-todos-los-derechos">Campamento La Perla. Todos los derechos reservados.</span></span>
+        <span data-i18n="chupaca-junin-peru">Chupaca · Junín · Perú</span>
       </div>
     </footer>
 
     <a class="wa-float" href="https://wa.me/51992746927?text=Hola%2C%20quisiera%20consultar%20disponibilidad%20en%20Campamento%20La%20Perla" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span>Conversemos</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.2 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1113.2 3.4 8.2 8.2 0 01-6.2 2.4z"/></svg><span data-i18n="conversemos">Conversemos</span>
     </a>
 
-    <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+    <button data-i18n-aria="volver-arriba" class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
 
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
-      <button class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
-      <button class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
-      <img id="lightboxImg" src="" alt="Imagen ampliada de la galería">
-      <button class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
+    <div data-i18n-aria="visor-de-imagenes" class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+      <button data-i18n-aria="cerrar" class="lightbox__close" data-lb="close" aria-label="Cerrar">×</button>
+      <button data-i18n-aria="anterior" class="lightbox__nav lightbox__nav--prev" data-lb="prev" aria-label="Anterior">‹</button>
+      <img data-i18n-alt="imagen-ampliada-de-la-galeria" id="lightboxImg" src="" alt="Imagen ampliada de la galería">
+      <button data-i18n-aria="siguiente" class="lightbox__nav lightbox__nav--next" data-lb="next" aria-label="Siguiente">›</button>
       <p class="lightbox__caption" id="lightboxCaption"></p>
     </div>
 
+    <script src="assets/js/i18n.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

@@ -295,8 +295,6 @@ p:last-child { margin-bottom: 0; }
 }
 .nav__link:hover::after,
 .nav__link.is-active::after { transform: scaleX(1); }
-.nav__item:hover 
-
 .site-header__actions { display: flex; align-items: center; gap: 16px; }
 
 /* Sobre la foto de portada */
@@ -324,6 +322,37 @@ p:last-child { margin-bottom: 0; }
 .site-header--over.is-stuck::before { opacity: 0; }
 .site-header.is-stuck .btn--ghost { --btn-fg: #fff; --btn-bd: rgba(255, 255, 255, 0.55); }
 .site-header.is-stuck .btn--ghost:hover { --btn-bg: #fff; --btn-fg: var(--verde); --btn-bd: #fff; }
+
+/* Selector de idioma */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.85;
+  transition: opacity 0.3s var(--ease);
+}
+.lang-switch:hover { opacity: 1; }
+.lang-switch__btn {
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: currentColor;
+  background: transparent;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+.lang-switch__btn:hover { color: var(--naranja); }
+.lang-switch__btn.is-active {
+  color: var(--verde);
+  background: var(--crema);
+}
+.site-header--over:not(.is-stuck) .lang-switch__btn.is-active { color: var(--verde); }
 
 /* Hamburguesa */
 .burger {
@@ -892,6 +921,8 @@ a:hover > .media img, .card:hover .media img, .media:hover img { transform: scal
   .nav { display: none; }
   .burger { display: flex; }
   .site-header__actions .btn { display: none; }
+  .lang-switch { gap: 0; padding: 2px; }
+  .lang-switch__btn { padding: 4px 7px; font-size: 9px; }
   .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .grid--split { grid-template-columns: 1fr; }
   .media-stack__front { position: static; width: 100%; margin-top: 12px; border: 0; }
@@ -911,3 +942,11 @@ a:hover > .media img, .card:hover .media img, .media:hover img { transform: scal
   .wa-float { padding: 15px; }
   .hero__dots { left: 50%; transform: translateX(-50%); }
 }
+
+/* --------------------------------------------------------------------------
+   19. Traducción (es · en · de)
+   -------------------------------------------------------------------------- */
+/* Mientras se aplica el idioma guardado se oculta el cuerpo para no mostrar
+   el español un instante. assets/js/i18n.js quita la clase al terminar y el
+   script del <head> la quita de todas formas pasados 1,5 s. */
+html.i18n-pending body { visibility: hidden; }
