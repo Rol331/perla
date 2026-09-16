@@ -336,7 +336,11 @@ p:last-child { margin-bottom: 0; }
 }
 .lang-switch:hover { opacity: 1; }
 .lang-switch__btn {
-  padding: 4px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 8px 5px;
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 10px;
@@ -346,6 +350,13 @@ p:last-child { margin-bottom: 0; }
   color: currentColor;
   background: transparent;
   transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+/* Banderas: caja común de 18 × 12 para que la fila quede pareja */
+.lang-switch__flag {
+  display: block;
+  width: 18px;
+  height: 12px;
+  flex-shrink: 0;
 }
 .lang-switch__btn:hover { color: var(--naranja); }
 .lang-switch__btn.is-active {
@@ -922,7 +933,8 @@ a:hover > .media img, .card:hover .media img, .media:hover img { transform: scal
   .burger { display: flex; }
   .site-header__actions .btn { display: none; }
   .lang-switch { gap: 0; padding: 2px; }
-  .lang-switch__btn { padding: 4px 7px; font-size: 9px; }
+  .lang-switch__btn { gap: 2px; padding: 3px 6px 4px; font-size: 9px; }
+  .lang-switch__flag { width: 15px; height: 10px; }
   .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .grid--split { grid-template-columns: 1fr; }
   .media-stack__front { position: static; width: 100%; margin-top: 12px; border: 0; }
